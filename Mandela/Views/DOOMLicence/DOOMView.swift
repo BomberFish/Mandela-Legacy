@@ -17,8 +17,7 @@ struct DOOMView: View {
                 .buttonStyle(.bordered)
         }
         Text("DOOM is property of id Software and ZeniMax Media. All rights reserved.")
-        .navigationTitle("DOOM Licence")
-        }
+            .navigationTitle("DOOM Licence")
     }
 }
 
