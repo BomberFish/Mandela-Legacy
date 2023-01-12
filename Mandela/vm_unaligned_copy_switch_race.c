@@ -1,10 +1,3 @@
-//
-//  vm_unaligned_copy_switch_race.c
-//  Mandela
-//
-//  Created by Hariz Shirazi on 2023-01-12.
-//
-
 // from https://github.com/apple-oss-distributions/xnu/blob/xnu-8792.61.2/tests/vm/vm_unaligned_copy_switch_race.c
 // modified to compile outside of XNU
 

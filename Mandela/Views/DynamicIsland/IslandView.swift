@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct IslandView: View {
-    let mobilegestalt= "/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist"
+    let mobilegestalt = "/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist"
     let screenY = Int(UIScreen.main.nativeBounds.height)
     var body: some View {
         Button(
             action: plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796),
         label: {
             Text("Enable")
-            Image(Image(systemName: "iphone.gen3"))
+            Image(systemName: "iphone.gen3")
                 .padding()
                 .foregroundColor(Color(UIColor.systemBlue))
                 .foregroundColor(Color.white)
@@ -25,7 +25,7 @@ struct IslandView: View {
             action: plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: screenY),
         label: {
             Text("Disable")
-            Image(Image(systemName: "iphone.gen2"))
+            Image(systemName: "iphone.gen2")
                 .padding()
                 .foregroundColor(Color(UIColor.systemRed))
                 .foregroundColor(Color.white)
@@ -54,7 +54,7 @@ struct IslandView: View {
     
         let newData = try! PropertyListSerialization.data(fromPropertyList: newPlist, format: .binary, options: 0)
 
-        overwriteFile(newData, plistPath)
+        OverwriteFile(newFileData: newData, targetPath: plistPath)
     }
 }
 

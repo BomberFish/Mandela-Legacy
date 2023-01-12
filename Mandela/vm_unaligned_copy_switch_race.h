@@ -1,10 +1,3 @@
-//
-//  vm_unaligned_copy_switch_race.h
-//  Mandela
-//
-//  Created by Hariz Shirazi on 2023-01-12.
-//
-
 #pragma once
 #include <stdlib.h>
 #include <stdbool.h>
