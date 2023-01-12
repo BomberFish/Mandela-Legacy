@@ -7,13 +7,23 @@
 
 import SwiftUI
 
+struct ListView: View {
+    var body: some View {
+        List {
+            Text("Hello, world!")
+            Text("Hello, world!")
+            Text("Hello, world!")
+            Text("Hello, world!")
+            Text("Hello, world!")
+        }
+        .navigationTitle("Mandela")
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            ListView()
         }
         .padding()
     }
