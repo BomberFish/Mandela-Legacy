@@ -32,6 +32,7 @@ struct ListView: View {
                 }
             }
         }
+        .listStyle(SidebarListStyle())
         .navigationTitle("Mandela")
     }
 }
