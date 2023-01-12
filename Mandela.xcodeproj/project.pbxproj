@@ -20,6 +20,7 @@
 		D6CBCA4C29704F8F00BB1BB5 /* DOOMImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4829704F8F00BB1BB5 /* DOOMImpl.swift */; };
 		D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */; };
 		D6CBCA502970580500BB1BB5 /* vm_unaligned_copy_switch_race.c in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4E2970580500BB1BB5 /* vm_unaligned_copy_switch_race.c */; };
+		D6CBCA53297058B700BB1BB5 /* Overwrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA52297058B700BB1BB5 /* Overwrite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOOMView.swift; sourceTree = "<group>"; };
 		D6CBCA4E2970580500BB1BB5 /* vm_unaligned_copy_switch_race.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vm_unaligned_copy_switch_race.c; sourceTree = "<group>"; };
 		D6CBCA4F2970580500BB1BB5 /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
+		D6CBCA512970585A00BB1BB5 /* Mandela-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Mandela-Bridging-Header.h"; path = "Mandela/Mandela-Bridging-Header.h"; sourceTree = "<group>"; };
+		D6CBCA52297058B700BB1BB5 /* Overwrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overwrite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 		D6CBCA022970410700BB1BB5 = {
 			isa = PBXGroup;
 			children = (
+				D6CBCA512970585A00BB1BB5 /* Mandela-Bridging-Header.h */,
 				D6CBCA0D2970410700BB1BB5 /* Mandela */,
 				D6CBCA1E2970412000BB1BB5 /* MandelaTests */,
 				D6CBCA282970412000BB1BB5 /* MandelaUITests */,
@@ -109,6 +113,7 @@
 			children = (
 				D6CBCA3C297046CE00BB1BB5 /* Views */,
 				D6CBCA0E2970410700BB1BB5 /* MandelaApp.swift */,
+				D6CBCA52297058B700BB1BB5 /* Overwrite.swift */,
 				D6CBCA102970410700BB1BB5 /* ContentView.swift */,
 				D6CBCA122970412000BB1BB5 /* Assets.xcassets */,
 				D6CBCA4E2970580500BB1BB5 /* vm_unaligned_copy_switch_race.c */,
@@ -305,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6CBCA112970410700BB1BB5 /* ContentView.swift in Sources */,
+				D6CBCA53297058B700BB1BB5 /* Overwrite.swift in Sources */,
 				D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */,
 				D6CBCA502970580500BB1BB5 /* vm_unaligned_copy_switch_race.c in Sources */,
 				D6CBCA402970487B00BB1BB5 /* IslandView.swift in Sources */,
