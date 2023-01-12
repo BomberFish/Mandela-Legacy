@@ -11,8 +11,10 @@ struct ListView: View {
     var body: some View {
         List {
             if #available(iOS 16, *) {
+                // iOS 16 only
                 NavigationLink(destination: Mandela.IslandView()) {
                     HStack {
+                        // iPhone 14 icon
                         Image("iphone.gen3")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -22,8 +24,11 @@ struct ListView: View {
                     }
                 }
             }
+            
+            // Any OS
             NavigationLink(destination: Mandela.DOOMView()) {
                 HStack {
+                    // Controller Icon
                     Image(systemName: "gamecontroller")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -32,7 +37,9 @@ struct ListView: View {
                 }
             }
         }
+        // Sidebar
         .listStyle(SidebarListStyle())
+        // Mandela
         .navigationTitle("Mandela")
     }
 }
@@ -42,7 +49,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ListView()
+                // Toolbar button
                 .toolbar {
+                    // Respring button
                     Button{
                         respring()
                     }
@@ -53,6 +62,8 @@ struct ContentView: View {
                 }
         }
     }
+    
+    // Respring function (See MandelaApp.swift)
     func respring() {
         withAnimation(.easeInOut) {
             triggerRespring = true
@@ -60,6 +71,8 @@ struct ContentView: View {
     }
 }
 
+
+// :fr:
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(triggerRespring: .constant(false))

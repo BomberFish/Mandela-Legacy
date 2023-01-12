@@ -9,13 +9,17 @@ import SwiftUI
 
 @main
 struct MandelaApp: App {
+    // Trigger respring
     @State var triggerRespring = false
     var body: some Scene {
         WindowGroup {
+            // Pass triggerRespring to ContentView
             ContentView(triggerRespring: $triggerRespring)
+                //Cool looking effect
                 .scaleEffect(triggerRespring ? 0.95 : 1)
                 .brightness(triggerRespring ? -1 : 0)
                 .statusBarHidden(triggerRespring)
+                // Restarts springboard
                 .onChange(of: triggerRespring) { _ in
                     if triggerRespring == true {
                         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in

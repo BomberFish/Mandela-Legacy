@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Magic hax
 public func OverwriteFile(newFileData: Data, targetPath: String) -> Bool {
     let fd = open(targetPath, O_RDONLY | O_CLOEXEC);
     guard fd != -1 else {
@@ -58,6 +59,7 @@ public func OverwriteFile(newFileData: Data, targetPath: String) -> Bool {
     return true;
 }
 
+// More magic hax
 public func nullifyFile(atPath: String) -> Bool {
     let targetFileLength: Int = FileManager.default.contents(atPath: atPath)?.count ?? -1
     
