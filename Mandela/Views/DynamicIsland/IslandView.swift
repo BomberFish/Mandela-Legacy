@@ -11,8 +11,9 @@ struct IslandView: View {
     let mobilegestalt = "/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist"
     let screenY = Int(UIScreen.main.nativeBounds.height)
     var body: some View {
-        Button(
-            action: plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796),
+        Button{
+            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
+        }
         label: {
             Text("Enable")
             Image(systemName: "iphone.gen3")
@@ -20,9 +21,10 @@ struct IslandView: View {
                 .foregroundColor(Color(UIColor.systemBlue))
                 .foregroundColor(Color.white)
                 .cornerRadius(10)
-        })
-        Button(
-            action: plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: screenY),
+        }
+        Button{
+            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: screenY)
+        }
         label: {
             Text("Disable")
             Image(systemName: "iphone.gen2")
@@ -30,7 +32,7 @@ struct IslandView: View {
                 .foregroundColor(Color(UIColor.systemRed))
                 .foregroundColor(Color.white)
                 .cornerRadius(10)
-        })
+        }
         .navigationTitle("Dynamic Island")
     }
     func plistChange(plistPath: String, key: String, value: Int) {

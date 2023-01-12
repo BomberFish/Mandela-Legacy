@@ -52,20 +52,23 @@ struct MainNav<Content>: View where Content: View {
 
 struct ContentView: View {
     @Binding var triggerRespring: Bool
-    func respring() {
-        withAnimation(.easeInOut) {
-            triggerRespring = true
-        }
-    }
     var body: some View {
         MainNav {
             ListView()
                 .toolbar {
-                    Button(action: respring()) {
+                    Button{
+                        respring()
+                    }
+                    label: {
                         Image(systemName: "arrow.counterclockwise.circle")
                         Text("Respring")
                     }
                 }
+        }
+    }
+    func respring() {
+        withAnimation(.easeInOut) {
+            triggerRespring = true
         }
     }
 }
