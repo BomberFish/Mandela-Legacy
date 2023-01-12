@@ -17,9 +17,11 @@ struct IslandView: View {
         label: {
             Text("Enable")
             Image("iphone.gen3")
+                .tint(.blue)
         }
             .controlSize(.large)
             .tint(.blue)
+            .frame(width: 16)
             .buttonStyle(.bordered)
         
         
@@ -29,11 +31,15 @@ struct IslandView: View {
         label: {
             Text("Disable")
             Image("iphone.gen3.slash")
+                .tint(.red)
         }
             .controlSize(.large)
             .tint(.red)
+            .frame(width: 16)
             .buttonStyle(.bordered)
-            .navigationTitle("Dynamic Island")
+        
+        
+        .navigationTitle("Dynamic Island")
     }
     func plistChange(plistPath: String, key: String, value: Int) {
         let stringsData = try! Data(contentsOf: URL(fileURLWithPath: plistPath))

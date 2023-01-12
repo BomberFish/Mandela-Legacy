@@ -17,6 +17,7 @@ struct ListView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 16)
+                            .tint(Color(UIColor.label))
                         Text("Dynamic Island")
                     }
                 }
