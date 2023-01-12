@@ -16,7 +16,7 @@ struct IslandView: View {
         }
         label: {
             Text("Enable")
-            Image("iphone.gen3").resizable().frame(width: 16)
+            Image("iphone.gen3").resizable().frame(width: 16, height: 16)
                 .tint(Color(UIColor.label))
         }
             .controlSize(.large)
@@ -29,7 +29,7 @@ struct IslandView: View {
         }
         label: {
             Text("Disable")
-            Image("iphone.gen3.slash").resizable().frame(width: 16)
+            Image("iphone.gen3.slash").resizable().frame(width: 16, height: 16)
                 .tint(Color(UIColor.label))
         }
             .controlSize(.large)
