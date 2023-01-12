@@ -14,6 +14,7 @@
 		D6CBCA202970412000BB1BB5 /* MandelaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA1F2970412000BB1BB5 /* MandelaTests.swift */; };
 		D6CBCA2A2970412000BB1BB5 /* MandelaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA292970412000BB1BB5 /* MandelaUITests.swift */; };
 		D6CBCA2C2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA2B2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift */; };
+		D6CBCA3B2970424800BB1BB5 /* vm_unaligned_copy_switch_race.c in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA3A2970424800BB1BB5 /* vm_unaligned_copy_switch_race.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		D6CBCA252970412000BB1BB5 /* MandelaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MandelaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBCA292970412000BB1BB5 /* MandelaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelaUITests.swift; sourceTree = "<group>"; };
 		D6CBCA2B2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D6CBCA392970424800BB1BB5 /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
+		D6CBCA3A2970424800BB1BB5 /* vm_unaligned_copy_switch_race.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vm_unaligned_copy_switch_race.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 			children = (
 				D6CBCA0E2970410700BB1BB5 /* MandelaApp.swift */,
 				D6CBCA102970410700BB1BB5 /* ContentView.swift */,
+				D6CBCA392970424800BB1BB5 /* vm_unaligned_copy_switch_race.h */,
+				D6CBCA3A2970424800BB1BB5 /* vm_unaligned_copy_switch_race.c */,
 				D6CBCA122970412000BB1BB5 /* Assets.xcassets */,
 				D6CBCA142970412000BB1BB5 /* Preview Content */,
 			);
@@ -195,6 +200,7 @@
 				TargetAttributes = {
 					D6CBCA0A2970410700BB1BB5 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 					D6CBCA1A2970412000BB1BB5 = {
 						CreatedOnToolsVersion = 14.1;
@@ -259,6 +265,7 @@
 			files = (
 				D6CBCA112970410700BB1BB5 /* ContentView.swift in Sources */,
 				D6CBCA0F2970410700BB1BB5 /* MandelaApp.swift in Sources */,
+				D6CBCA3B2970424800BB1BB5 /* vm_unaligned_copy_switch_race.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mandela/Preview Content\"";
@@ -432,6 +440,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.Mandela;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Mandela/Mandela-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -442,6 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mandela/Preview Content\"";
@@ -460,6 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.Mandela;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Mandela/Mandela-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
