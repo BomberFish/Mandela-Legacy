@@ -17,6 +17,9 @@ struct DOOMView: View {
                 .buttonStyle(.bordered)
         }
         Text("DOOM is property of id Software and ZeniMax Media. All rights reserved.")
+            .foregroundColor(Color(UIColor.tertiarySystemBackground))
+            .font(.system(size: 12, design: .monospaced))
+            
             .navigationTitle("DOOM Licence")
     }
 }

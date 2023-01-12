@@ -16,22 +16,20 @@ struct IslandView: View {
         }
         label: {
             Text("Enable")
-            Image(systemName: "iphone.gen3")
-                .padding()
-                .foregroundColor(Color(UIColor.systemBlue))
-                .foregroundColor(Color.white)
-                .cornerRadius(10)
+            Image("iphone.gen3")
+                .controlSize(.large)
+                .tint(.blue)
+                .buttonStyle(.bordered)
         }
         Button{
             plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: screenY)
         }
         label: {
             Text("Disable")
-            Image(systemName: "iphone.gen2")
-                .padding()
-                .foregroundColor(Color(UIColor.systemRed))
-                .foregroundColor(Color.white)
-                .cornerRadius(10)
+            Image("iphone.gen3.slash")
+                .controlSize(.large)
+                .tint(.red)
+                .buttonStyle(.bordered)
         }
         .navigationTitle("Dynamic Island")
     }

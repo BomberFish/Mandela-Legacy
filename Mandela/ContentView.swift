@@ -13,11 +13,10 @@ struct ListView: View {
             if #available(iOS 16, *) {
                 NavigationLink(destination: Mandela.IslandView()) {
                     HStack {
-                        Image(systemName: "iphone.gen3")
+                        Image("iphone.gen3")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 32)
-                            .cornerRadius(8)
+                            .frame(width: 16)
                         Text("Dynamic Island")
                     }
                 }
@@ -28,7 +27,6 @@ struct ListView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 32)
-                        .cornerRadius(8)
                     Text("Replace Licence with DOOM")
                 }
             }
