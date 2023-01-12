@@ -17,21 +17,23 @@ struct IslandView: View {
         label: {
             Text("Enable")
             Image("iphone.gen3")
-                .controlSize(.large)
-                .tint(.blue)
-                .buttonStyle(.bordered)
         }
+            .controlSize(.large)
+            .tint(.blue)
+            .buttonStyle(.bordered)
+        
+        
         Button{
             plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: screenY)
         }
         label: {
             Text("Disable")
             Image("iphone.gen3.slash")
-                .controlSize(.large)
-                .tint(.red)
-                .buttonStyle(.bordered)
         }
-        .navigationTitle("Dynamic Island")
+            .controlSize(.large)
+            .tint(.red)
+            .buttonStyle(.bordered)
+            .navigationTitle("Dynamic Island")
     }
     func plistChange(plistPath: String, key: String, value: Int) {
         let stringsData = try! Data(contentsOf: URL(fileURLWithPath: plistPath))
