@@ -21,11 +21,19 @@ struct ListView: View {
 }
 
 struct ContentView: View {
+    @Binding var triggerRespring: Bool
     var body: some View {
-        VStack {
-            ListView()
+        ListView()
+            .toolbar {
+                Button(action: respring()) {
+                Image(systemName: "arrow.counterclockwise.circle")
+                Text("Respring")
+            }
+    }
+    func respring() {
+        withAnimation(.easeInOut) {
+            triggerRespring = true
         }
-        .padding()
     }
 }
 
