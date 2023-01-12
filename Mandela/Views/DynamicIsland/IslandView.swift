@@ -15,8 +15,8 @@ struct IslandView: View {
             plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
         }
         label: {
-            Text("Enable")
-            Image("iphone.gen3").resizable().frame(width: 16, height: 16)
+            Text("Enable").font(.system(size: 25))
+            Image("iphone.gen3").resizable().frame(width: 25, height: 29)
                 .tint(Color(UIColor.label))
         }
             .controlSize(.large)
@@ -28,8 +28,8 @@ struct IslandView: View {
             plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: screenY)
         }
         label: {
-            Text("Disable")
-            Image("iphone.gen3.slash").resizable().frame(width: 16, height: 16)
+            Text("Disable").font(.system(size: 25))
+            Image("iphone.gen3.slash").resizable().frame(width: 25, height: 29)
                 .tint(Color(UIColor.label))
         }
             .controlSize(.large)
