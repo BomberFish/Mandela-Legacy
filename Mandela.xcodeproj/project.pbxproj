@@ -15,6 +15,7 @@
 		D6CBCA2A2970412000BB1BB5 /* MandelaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA292970412000BB1BB5 /* MandelaUITests.swift */; };
 		D6CBCA2C2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA2B2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift */; };
 		D6CBCA3B2970424800BB1BB5 /* vm_unaligned_copy_switch_race.c in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA3A2970424800BB1BB5 /* vm_unaligned_copy_switch_race.c */; };
+		D6CBCA402970487B00BB1BB5 /* IslandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA3F2970487B00BB1BB5 /* IslandView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D6CBCA2B2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D6CBCA392970424800BB1BB5 /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
 		D6CBCA3A2970424800BB1BB5 /* vm_unaligned_copy_switch_race.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vm_unaligned_copy_switch_race.c; sourceTree = "<group>"; };
+		D6CBCA3F2970487B00BB1BB5 /* IslandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,16 +138,17 @@
 		D6CBCA3C297046CE00BB1BB5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D6CBCA3D297046DA00BB1BB5 /* TestMod1 */,
+				D6CBCA3E297047EF00BB1BB5 /* DynamicIsland */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D6CBCA3D297046DA00BB1BB5 /* TestMod1 */ = {
+		D6CBCA3E297047EF00BB1BB5 /* DynamicIsland */ = {
 			isa = PBXGroup;
 			children = (
+				D6CBCA3F2970487B00BB1BB5 /* IslandView.swift */,
 			);
-			path = TestMod1;
+			path = DynamicIsland;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6CBCA112970410700BB1BB5 /* ContentView.swift in Sources */,
+				D6CBCA402970487B00BB1BB5 /* IslandView.swift in Sources */,
 				D6CBCA0F2970410700BB1BB5 /* MandelaApp.swift in Sources */,
 				D6CBCA3B2970424800BB1BB5 /* vm_unaligned_copy_switch_race.c in Sources */,
 			);
