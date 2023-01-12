@@ -16,8 +16,11 @@ struct IslandView: View {
         }
         label: {
             Text("Enable")
+            
+            
             Image("iphone.gen3")
                 .tint(.blue)
+                .frame(width: 16)
         }
             .controlSize(.large)
             .tint(.blue)
@@ -32,6 +35,7 @@ struct IslandView: View {
             Text("Disable")
             Image("iphone.gen3.slash")
                 .tint(.red)
+                .frame(width: 16)
         }
             .controlSize(.large)
             .tint(.red)
