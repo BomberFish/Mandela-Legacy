@@ -8,4 +8,6 @@ You can overwrite files with the following function:
 ```swift
 OverwriteFile(newFileData: newData, targetPath: /path/to/file)
 ```
- If you need to change the value of a key in a plist, look in IslandView.swift for an implementation/
+ If you need to change the value of a key in a plist, look in IslandView.swift for an implementation.
+
+Happy modding!
