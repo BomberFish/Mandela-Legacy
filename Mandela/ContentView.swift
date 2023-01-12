@@ -10,14 +10,26 @@ import SwiftUI
 struct ListView: View {
     var body: some View {
         List {
-            NavigationLink(destination: TrollMods.TrollLockView()) {
+            if #available(iOS 16, *) {
+                NavigationLink(destination: Mandela.IslandView()) {
+                    HStack {
+                        Image(systemName: "iphone.gen3")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 32)
+                            .cornerRadius(8)
+                        Text("Dynamic Island")
+                    }
+                }
+            }
+            NavigationLink(destination: Mandela.DOOMView()) {
                 HStack {
-                    Image(systemName: "iphone.gen3")
+                    Image(systemName: "gamecontroller")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 32)
                         .cornerRadius(8)
-                    Text("Dynamic Island")
+                    Text("Replace Licence with DOOM")
                 }
             }
         }
