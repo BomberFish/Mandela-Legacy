@@ -25,6 +25,18 @@ struct ListView: View {
                 }
             }
             
+            NavigationLink(destination: Mandela.TypeView()) {
+                HStack {
+                    // iPhone 14 icon
+                    Image("iphone.gen3")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 16)
+                        .tint(Color(UIColor.label))
+                    Text("Device Type")
+                }
+            }
+            
             // Any OS
             NavigationLink(destination: Mandela.DOOMView()) {
                 HStack {
