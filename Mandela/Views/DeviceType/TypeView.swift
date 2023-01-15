@@ -35,16 +35,53 @@ struct TypeView: View {
         .tint(.blue)
         .buttonStyle(.bordered)
         }
+        
         Button{
-            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 420 ) // Placeholder
+            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2532)
         }
         label: {
-            Text("Disable").font(.system(size: 25))
-            Image("iphone.gen2.slash").resizable().frame(width: 25, height: 29)
+            Text("iPhone 12/13 Pro").font(.system(size: 25))
+            Image("iphone.gen2").resizable().frame(width: 25, height: 29)
                 .tint(Color(UIColor.label))
         }
             .controlSize(.large)
-            .tint(.red)
+            .tint(.blue)
+            .buttonStyle(.bordered)
+        
+        Button{
+            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 1792)
+        }
+        label: {
+            Text("iPhone XR/11").font(.system(size: 25))
+            Image("iphone.gen2").resizable().frame(width: 25, height: 29)
+                .tint(Color(UIColor.label))
+        }
+            .controlSize(.large)
+            .tint(.blue)
+            .buttonStyle(.bordered)
+        
+        Button{
+            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2436)
+        }
+        label: {
+            Text("iPhone X/XS/11 Pro").font(.system(size: 25))
+            Image("iphone.gen2").resizable().frame(width: 25, height: 29)
+                .tint(Color(UIColor.label))
+        }
+            .controlSize(.large)
+            .tint(.blue)
+            .buttonStyle(.bordered)
+        
+        Button{
+            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 570)
+        }
+        label: {
+            Text("iPhone 8").font(.system(size: 25))
+            Image("iphone.gen1").resizable().frame(width: 25, height: 29)
+                .tint(Color(UIColor.label))
+        }
+            .controlSize(.large)
+            .tint(.blue)
             .buttonStyle(.bordered)
         
         
