@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */; };
 		D6CBCA0F2970410700BB1BB5 /* MandelaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA0E2970410700BB1BB5 /* MandelaApp.swift */; };
 		D6CBCA112970410700BB1BB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA102970410700BB1BB5 /* ContentView.swift */; };
 		D6CBCA132970412000BB1BB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CBCA122970412000BB1BB5 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		D6CBCA0B2970410700BB1BB5 /* Mandela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mandela.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBCA0E2970410700BB1BB5 /* MandelaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelaApp.swift; sourceTree = "<group>"; };
 		D6CBCA102970410700BB1BB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D60DB6D929737AC100B4FAC8 /* DeviceType */ = {
+			isa = PBXGroup;
+			children = (
+				D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */,
+			);
+			path = DeviceType;
+			sourceTree = "<group>";
+		};
 		D6CBCA022970410700BB1BB5 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		D6CBCA3C297046CE00BB1BB5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D60DB6D929737AC100B4FAC8 /* DeviceType */,
 				D6CBCA4329704F2800BB1BB5 /* DOOMLicence */,
 				D6CBCA3E297047EF00BB1BB5 /* DynamicIsland */,
 			);
@@ -315,6 +326,7 @@
 				D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */,
 				D6CBCA402970487B00BB1BB5 /* IslandView.swift in Sources */,
 				D6CBCA0F2970410700BB1BB5 /* MandelaApp.swift in Sources */,
+				D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */,
 				D6CBCA4C29704F8F00BB1BB5 /* DOOMImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
