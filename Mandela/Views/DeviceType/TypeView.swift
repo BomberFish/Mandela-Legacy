@@ -22,6 +22,11 @@ struct TypeView: View {
         .controlSize(.large)
         .tint(.blue)
         .buttonStyle(.bordered)
+        .onAppear {
+        let alert = UIAlertController(title: "Warning", message: "This tweak has a chance of damaging your device. By using this tweak, you agree that I (BomberFish) am not responsible for any damage that happens to your device as a result of using this tweak.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
+        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
+        }
             
             Button{
                 plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
@@ -34,62 +39,58 @@ struct TypeView: View {
         .controlSize(.large)
         .tint(.blue)
         .buttonStyle(.bordered)
-        }
-        
-        Button{
-            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2532)
-        }
+            
+            Button{
+                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2532)
+            }
         label: {
             Text("iPhone 12/13 Pro").font(.system(size: 25))
             Image("iphone.gen2").resizable().frame(width: 25, height: 29)
                 .tint(Color(UIColor.label))
         }
-            .controlSize(.large)
-            .tint(.blue)
-            .buttonStyle(.bordered)
-        
-        Button{
-            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 1792)
-        }
+        .controlSize(.large)
+        .tint(.blue)
+        .buttonStyle(.bordered)
+            
+            Button{
+                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 1792)
+            }
         label: {
             Text("iPhone XR/11").font(.system(size: 25))
             Image("iphone.gen2").resizable().frame(width: 25, height: 29)
                 .tint(Color(UIColor.label))
         }
-            .controlSize(.large)
-            .tint(.blue)
-            .buttonStyle(.bordered)
-        
-        Button{
-            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2436)
-        }
+        .controlSize(.large)
+        .tint(.blue)
+        .buttonStyle(.bordered)
+            
+            Button{
+                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2436)
+            }
         label: {
             Text("iPhone X/XS/11 Pro").font(.system(size: 25))
             Image("iphone.gen2").resizable().frame(width: 25, height: 29)
                 .tint(Color(UIColor.label))
         }
-            .controlSize(.large)
-            .tint(.blue)
-            .buttonStyle(.bordered)
-        
-        Button{
-            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 570)
-        }
+        .controlSize(.large)
+        .tint(.blue)
+        .buttonStyle(.bordered)
+            
+            Button{
+                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 570)
+            }
         label: {
             Text("iPhone 8").font(.system(size: 25))
             Image("iphone.gen1").resizable().frame(width: 25, height: 29)
                 .tint(Color(UIColor.label))
         }
-            .controlSize(.large)
-            .tint(.blue)
-            .buttonStyle(.bordered)
-        
-        
+        .controlSize(.large)
+        .tint(.blue)
+        .buttonStyle(.bordered)
+            
+            
         .navigationTitle("Dynamic Island")
-    }.onAppear {
-        let alert = UIAlertController(title: "Warning", message: "This tweak has a chance of damaging your device. By using this tweak, you agree that I (BomberFish) am not responsible for any damage that happens to your device as a result of using this tweak.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
-        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
+        }
     }
 
     func plistChange(plistPath: String, key: String, value: Int) {
