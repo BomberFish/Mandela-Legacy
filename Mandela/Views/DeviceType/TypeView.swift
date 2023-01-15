@@ -10,30 +10,31 @@ import SwiftUI
 struct TypeView: View {
     let mobilegestalt = "/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist"
     var body: some View {
-        Button{
-            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
-        }
+        if #available(iOS 16, *) {
+            Button{
+                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
+            }
         label: {
             Text("iPhone 14 Pro Max").font(.system(size: 25))
             Image("iphone.gen3").resizable().frame(width: 25, height: 29)
                 .tint(Color(UIColor.label))
         }
-            .controlSize(.large)
-            .tint(.blue)
-            .buttonStyle(.bordered)
-        
-        Button{
-            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
-        }
+        .controlSize(.large)
+        .tint(.blue)
+        .buttonStyle(.bordered)
+            
+            Button{
+                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
+            }
         label: {
             Text("iPhone 14 Pro").font(.system(size: 25))
             Image("iphone.gen3").resizable().frame(width: 25, height: 29)
                 .tint(Color(UIColor.label))
         }
-            .controlSize(.large)
-            .tint(.blue)
-            .buttonStyle(.bordered)
-        
+        .controlSize(.large)
+        .tint(.blue)
+        .buttonStyle(.bordered)
+        }
         Button{
             plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 420 ) // Placeholder
         }
