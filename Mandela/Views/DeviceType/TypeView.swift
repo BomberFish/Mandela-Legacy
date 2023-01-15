@@ -26,7 +26,7 @@ struct TypeView: View {
         //let alert = UIAlertController(title: "Warning", message: "This tweak has a chance of damaging your device. By using this tweak, you agree that I (BomberFish) am not responsible for any damage that happens to your device as a result of using this tweak.", preferredStyle: .alert)
         //alert.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
         //UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
-        }
+        //}
             
             Button{
                 plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
