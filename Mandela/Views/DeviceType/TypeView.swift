@@ -114,7 +114,7 @@ struct TypeView: View {
     
         let newData = try! PropertyListSerialization.data(fromPropertyList: newPlist, format: .binary, options: 0)
 
-        OverwriteFile(newFileData: newData, targetPath: plistPath)
+        overwriteFile(newData, plistPath)
     }
 }
 
