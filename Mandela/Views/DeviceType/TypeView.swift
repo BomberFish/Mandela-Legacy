@@ -89,7 +89,7 @@ struct TypeView: View {
         .buttonStyle(.bordered)
             
             
-        .navigationTitle("Dynamic Island")
+        .navigationTitle("Device Type")
         }
     }
 
