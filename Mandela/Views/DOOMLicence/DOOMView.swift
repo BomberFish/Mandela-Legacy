@@ -21,6 +21,7 @@ struct DOOMView: View {
             .foregroundColor(Color(UIColor.tertiarySystemBackground))
             .font(.system(size: 12, design: .monospaced))
             .frame (maxWidth: .infinity, alignment: .center)
+            .padding()
             
             .navigationTitle("DOOM Licence")
     }
