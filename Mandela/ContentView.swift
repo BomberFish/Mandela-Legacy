@@ -10,21 +10,6 @@ import SwiftUI
 struct ListView: View {
     var body: some View {
         List {
-            if #available(iOS 16, *) {
-                // iOS 16 only
-                NavigationLink(destination: Mandela.IslandView()) {
-                    HStack {
-                        // iPhone 14 icon
-                        Image("iphone.gen3")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 16)
-                            .tint(Color(UIColor.label))
-                        Text("Dynamic Island")
-                    }
-                }
-            }
-            
             NavigationLink(destination: Mandela.TypeView()) {
                 HStack {
                     // iPhone 14 icon
