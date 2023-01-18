@@ -43,11 +43,22 @@ struct ListView: View {
 
 struct ContentView: View {
     @Binding var triggerRespring: Bool
+    @State private var showInfo = false;
     var body: some View {
         NavigationView {
             ListView()
-                // Toolbar button
+                // Top bar
                 .toolbar {
+                    //Info button
+                    Button(action: { showInfo = true }) {
+                        Image(systemName: "info.circle")
+                    }
+                    .alert(isPresented: $showInfo) {
+                        Alert(
+                            title: Text("Mandela"),
+                            message: Text("Developed by BomberFish. Tweaks may damage your device, use this app at your own risk.")
+                        )
+                    }
                     // Respring button
                     Button{
                         respring()
