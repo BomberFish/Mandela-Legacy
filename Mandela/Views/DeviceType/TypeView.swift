@@ -15,8 +15,8 @@ struct TypeView: View {
                 plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
             }
         label: {
-            Text("iPhone 14 Pro Max").font(.system(size: 25))
-            Image("iphone.gen3").resizable().frame(width: 25, height: 29)
+            Text("iPhone 14 Pro Max")
+            Image("iphone.gen3").resizable().frame(width: 13, height: 16)
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
@@ -33,7 +33,7 @@ struct TypeView: View {
             }
         label: {
             Text("iPhone 14 Pro")
-            Image("iphone.gen3").resizable().frame(width: 16, height: 16)
+            Image("iphone.gen3").resizable().frame(width: 13, height: 16)
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
@@ -45,7 +45,7 @@ struct TypeView: View {
             }
         label: {
             Text("iPhone 12/13 Pro")
-            Image("iphone.gen2").resizable().frame(width: 16, height: 16)
+            Image("iphone.gen2").resizable().frame(width: 13, height: 16)
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
@@ -57,7 +57,7 @@ struct TypeView: View {
             }
         label: {
             Text("iPhone XR/11")
-            Image("iphone.gen2").resizable().frame(width: 16, height: 16)
+            Image("iphone.gen2").resizable().frame(width: 13, height: 16)
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
@@ -69,7 +69,7 @@ struct TypeView: View {
             }
         label: {
             Text("iPhone X/XS/11 Pro")
-            Image("iphone.gen2").resizable().frame(width: 16, height: 16)
+            Image("iphone.gen2").resizable().frame(width: 13, height: 16)
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
@@ -81,7 +81,7 @@ struct TypeView: View {
             }
         label: {
             Text("iPhone 8")
-            Image("iphone.gen1").resizable().frame(width: 16, height: 16)
+            Image("iphone.gen1").resizable().frame(width: 13, height: 16)
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)

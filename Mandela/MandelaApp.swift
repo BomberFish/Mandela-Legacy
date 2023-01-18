@@ -15,7 +15,7 @@ struct MandelaApp: App {
         WindowGroup {
             // Pass triggerRespring to ContentView
             ContentView(triggerRespring: $triggerRespring)
-                //Cool looking effect
+                // Cool looking effect stolen from the testicular discomfort jailbreak
                 .scaleEffect(triggerRespring ? 0.95 : 1)
                 .brightness(triggerRespring ? -1 : 0)
                 .statusBarHidden(triggerRespring)
