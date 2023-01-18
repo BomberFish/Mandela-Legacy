@@ -44,6 +44,7 @@ struct ListView: View {
 struct ContentView: View {
     @Binding var triggerRespring: Bool
     @State private var showInfo = false;
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     var body: some View {
         NavigationView {
             ListView()
@@ -55,7 +56,7 @@ struct ContentView: View {
                     }
                     .alert(isPresented: $showInfo) {
                         Alert(
-                            title: Text("Mandela"),
+                            title: Text("Mandela " + appVersion),
                             message: Text("Developed by BomberFish. Tweaks may damage your device, use this app at your own risk.")
                         )
                     }
