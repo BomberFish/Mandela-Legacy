@@ -23,9 +23,9 @@ struct CarrierChangerView: View {
     func NamePrompt() {
         let alert = UIAlertController(title: "Custom carrier", message: "Enter a string to use as the custom carrier.", preferredStyle: .alert)
         alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "pwned."
+            textField.placeholder = "BomberFish Industries"
         })
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
             let text = alert.textFields![0].text!
             SetName(newName: text)
         }))
