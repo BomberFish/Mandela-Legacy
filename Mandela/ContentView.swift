@@ -33,6 +33,28 @@ struct ListView: View {
                     Text("Replace Licence with DOOM")
                 }
             }
+            
+            NavigationLink(destination: Mandela.AirPowerView()) {
+                HStack {
+                    // Waves Icon
+                    Image(systemName: "dot.radiowaves.left.and.right")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 32)
+                    Text("AirPower Charging Sound")
+                }
+            }
+            
+            NavigationLink(destination: Mandela.CarrierChangerView()) {
+                HStack {
+                    // Cellular Icon
+                    Image(systemName: "cellularbars")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 32)
+                    Text("Change Carrier Name")
+                }
+            }
         }
         // Sidebar
         .listStyle(SidebarListStyle())

@@ -15,7 +15,7 @@ struct AirPowerView: View {
                 .tint(.green)
                 .buttonStyle(.bordered)
         }
-            .navigationTitle("DOOM Licence")
+            .navigationTitle("AirPower Sound")
     }
 }
 
