@@ -19,9 +19,10 @@ struct MandelaApp: App {
                 .scaleEffect(triggerRespring ? 0.95 : 1)
                 .brightness(triggerRespring ? -1 : 0)
                 .statusBarHidden(triggerRespring)
-                // Restarts springboard
+                // MARK: - Restarts springboard
                 .onChange(of: triggerRespring) { _ in
                     if triggerRespring == true {
+                        // MARK: - The main springboard bug
                         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
                             guard let window = UIApplication.shared.windows.first else { return }
                             while true {

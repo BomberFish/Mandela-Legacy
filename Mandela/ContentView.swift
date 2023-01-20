@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - List
 struct ListView: View {
     var body: some View {
         List {
@@ -63,6 +64,7 @@ struct ListView: View {
     }
 }
 
+// MARK: - Main content view
 struct ContentView: View {
     @Binding var triggerRespring: Bool
     @State private var showInfo = false;
@@ -70,7 +72,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ListView()
-                // Top bar
+                // MARK: - Top bar
                 .toolbar {
                     //Info button
                     Button(action: { showInfo = true }) {
@@ -94,7 +96,7 @@ struct ContentView: View {
         }
     }
     
-    // Respring function (See MandelaApp.swift)
+    // MARK: - Respring function (See MandelaApp.swift)
     func respring() {
         withAnimation(.easeInOut) {
             triggerRespring = true

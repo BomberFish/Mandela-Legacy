@@ -18,7 +18,7 @@ struct CarrierChangerView: View {
         .navigationTitle("Change Carrier Name")
     }
     
-    // MARK:- Prompt user for Name
+    // MARK: - Prompt user for Name
     
     func NamePrompt() {
         let alert = UIAlertController(title: "Custom carrier", message: "Enter a string to use as the custom carrier.", preferredStyle: .alert)
@@ -39,7 +39,7 @@ struct CarrierChangerView: View {
         }))
     }
     
-    // MARK:- plist editing function
+    // MARK: - plist editing function
     
     func plistChange(plistPath: String, key: String, value: Int) {
         let stringsData = try! Data(contentsOf: URL(fileURLWithPath: plistPath))
