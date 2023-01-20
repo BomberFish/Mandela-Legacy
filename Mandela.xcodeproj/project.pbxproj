@@ -22,6 +22,7 @@
 		D6CBCA4B29704F8F00BB1BB5 /* DOOMLicence.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CBCA4729704F8F00BB1BB5 /* DOOMLicence.xcassets */; };
 		D6CBCA4C29704F8F00BB1BB5 /* DOOMImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4829704F8F00BB1BB5 /* DOOMImpl.swift */; };
 		D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */; };
+		D6D63AE2297AF08E003D10AD /* CarrierChangerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D63AE1297AF08E003D10AD /* CarrierChangerImpl.swift */; };
 		D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		D6CBCA4729704F8F00BB1BB5 /* DOOMLicence.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DOOMLicence.xcassets; sourceTree = "<group>"; };
 		D6CBCA4829704F8F00BB1BB5 /* DOOMImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOOMImpl.swift; sourceTree = "<group>"; };
 		D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOOMView.swift; sourceTree = "<group>"; };
+		D6D63AE1297AF08E003D10AD /* CarrierChangerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierChangerImpl.swift; sourceTree = "<group>"; };
 		D6DFDA5529705BEA002E2748 /* Mandela-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mandela-Bridging-Header.h"; sourceTree = "<group>"; };
 		D6DFDA5629705D20002E2748 /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
 		D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vm_unaligned_copy_switch_race.m; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */,
+				D6D63AE1297AF08E003D10AD /* CarrierChangerImpl.swift */,
 			);
 			path = CarrierChanger;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				D65EFB99297AC95A00ED6E5A /* AirPowerView.swift in Sources */,
 				D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */,
 				D6CBCA4C29704F8F00BB1BB5 /* DOOMImpl.swift in Sources */,
+				D6D63AE2297AF08E003D10AD /* CarrierChangerImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

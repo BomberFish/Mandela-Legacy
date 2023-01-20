@@ -1,3 +1,5 @@
+// Thanks Ian Beer for the PoC!
+
 #import <Foundation/Foundation.h>
 #include <string.h>
 #include <mach/mach.h>

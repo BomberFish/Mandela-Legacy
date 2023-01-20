@@ -92,7 +92,7 @@ struct TypeView: View {
         .navigationTitle("Device Type")
         }
     }
-
+    // MARK: - plist editing function
     func plistChange(plistPath: String, key: String, value: Int) {
         let stringsData = try! Data(contentsOf: URL(fileURLWithPath: plistPath))
         
