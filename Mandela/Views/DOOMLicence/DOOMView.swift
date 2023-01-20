@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct DOOMView: View {
-    // For alert
-    @State private var showInfo = false;
     var body: some View {
         VStack {
             Button("Replace the iOS Licence page! (English)", action: OverwriteLicence)

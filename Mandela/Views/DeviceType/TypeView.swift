@@ -13,7 +13,7 @@ struct TypeView: View {
         if #available(iOS 16, *) {
             Button{
                 plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
-            }
+            }   
         label: {
             Text("iPhone 14 Pro Max")
             Image("iphone.gen3").resizable().frame(width: 13, height: 16)

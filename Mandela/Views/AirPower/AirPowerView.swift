@@ -9,7 +9,13 @@ import SwiftUI
 
 struct AirPowerView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Replace the Charging Sound!", action: OverwriteCharger)
+                .controlSize(.large)
+                .tint(.green)
+                .buttonStyle(.bordered)
+        }
+            .navigationTitle("DOOM Licence")
     }
 }
 
