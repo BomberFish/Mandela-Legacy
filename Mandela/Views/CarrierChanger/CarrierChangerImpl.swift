@@ -11,8 +11,7 @@ func SetName(newName: String) {
     var succeededOnce: Bool = false
     // Credit: TrollTools for process
     // get the carrier files
-    // FIXME: Handle errors?
-    for url in try FileManager.default.contentsOfDirectory(at: URL(fileURLWithPath: "/var/mobile/Library/Carrier Bundles/Overlay/"), includingPropertiesForKeys: nil) {
+    for url in try! FileManager.default.contentsOfDirectory(at: URL(fileURLWithPath: "/var/mobile/Library/Carrier Bundles/Overlay/"), includingPropertiesForKeys: nil) {
         guard let plistData = try? Data(contentsOf: url) else { continue }
         guard var plist = try? PropertyListSerialization.propertyList(from: plistData, format: nil) as? [String:Any] else { continue }
         let originalSize = plistData.count
