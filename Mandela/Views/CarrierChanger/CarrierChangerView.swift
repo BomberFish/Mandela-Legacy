@@ -27,7 +27,7 @@ struct CarrierChangerView: View {
         })
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
             let text = alert.textFields![0].text!
-            plistChange(plistPath: "/System/Library/PrivateFrameworks/SystemStatusServer.framework/en_GB.lproj/SystemStatusServer-Telephony.strings", key: "NO_SIM", value: text)
+            SetName(newName: text)
         }))
     }
 }
