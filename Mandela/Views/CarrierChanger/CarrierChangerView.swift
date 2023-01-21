@@ -19,7 +19,7 @@ struct CarrierChangerView: View {
     }
     
     // MARK: - Prompt user for Name
-    
+        
     func NamePrompt() {
         let alert = UIAlertController(title: "Custom carrier", message: "Enter what to use as the carrier.", preferredStyle: .alert)
         alert.addTextField(configurationHandler: { textField in

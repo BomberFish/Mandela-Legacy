@@ -15,7 +15,7 @@ func OverwriteCharger() {
         /// This should be easy, considering there are public APIs to do this
         /// https://stackoverflow.com/questions/40909754/ddg#40909806
         /// https://developer.apple.com/documentation/foundation/nslocale
-        overwriteFile(try! Data(contentsOf: URL.init(fileURLWithPath: htmlfile!)), "/System/Library/Audio/UISounds/connect_power.caf");
+        overwriteFile(try? Data(contentsOf: URL.init(fileURLWithPath: htmlfile!)), "/System/Library/Audio/UISounds/connect_power.caf");
     }
 }
 

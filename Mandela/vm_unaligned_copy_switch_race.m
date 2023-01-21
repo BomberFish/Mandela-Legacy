@@ -155,6 +155,7 @@ void* alloc_at(mach_vm_address_t desired_address, mach_vm_size_t size) {
   return (void*)desired_address;
 }
 
+// Ignore warnings, we want the REAL SpinLock.
 OSSpinLock running_lock = 1;  // locked
 OSSpinLock start_lock = 1;    // locked
 OSSpinLock stop_lock = 0;     // unlocked
