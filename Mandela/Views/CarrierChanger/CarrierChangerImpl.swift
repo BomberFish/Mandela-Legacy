@@ -7,8 +7,10 @@
 
 import Foundation
 
+// MARK: - Set Carrier Name
 func SetName(newName: String) {
     var succeededOnce: Bool = false
+    // FIXME: This is utterly broken last time I checked
     // Credit: TrollTools for process
     // get the carrier files
     for url in try! FileManager.default.contentsOfDirectory(at: URL(fileURLWithPath: "/var/mobile/Library/Carrier Bundles/Overlay/"), includingPropertiesForKeys: nil) {

@@ -14,6 +14,10 @@ struct CarrierChangerView: View {
                 .controlSize(.large)
                 .tint(.green)
                 .buttonStyle(.bordered)
+            Text("WARNING: This tweak is currently BROKEN. Use at your own risk")
+                .font(.system(size: 16, design: .monospaced))
+                .frame (maxWidth: .infinity, alignment: .center)
+                .padding()
         }
         .navigationTitle("Change Carrier Name")
     }
