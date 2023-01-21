@@ -17,17 +17,16 @@ func SetName(newName: String) {
         guard let plistData = try? Data(contentsOf: url) else { continue }
         guard var plist = try? PropertyListSerialization.propertyList(from: plistData, format: nil) as? [String:Any] else { continue }
         let originalSize = plistData.count
-        if originalSize < 15950 && plist["CarrierName"] != nil && plist["CarrierName"] as! String == "AT&T" {
-            // modify values
-            print("Modifying: " + (plist["CarrierName"] as! String))
-            if var images = plist["StatusBarImages"] as? [[String: Any]] {
-                for var (i, image) in images.enumerated() {
-                    image["StatusBarCarrierName"] = newName
+        // modify values
+        print("Modifying: " + (plist["CarrierName"] as! String))
+        if var images = plist["StatusBarImages"] as? [[String: Any]] {
+            for var (i, image) in images.enumerated() {
+                image["StatusBarCarrierName"] = newName
                     
-                    images[i] = image
-                }
-                plist["StatusBarImages"] = images
+                images[i] = image
             }
+            plist["StatusBarImages"] = images
+        }
             
             // remove unnecessary parameters
             plist.removeValue(forKey: "CarrierName")
