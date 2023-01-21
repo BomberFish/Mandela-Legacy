@@ -18,7 +18,6 @@
 		D6CBCA202970412000BB1BB5 /* MandelaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA1F2970412000BB1BB5 /* MandelaTests.swift */; };
 		D6CBCA2A2970412000BB1BB5 /* MandelaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA292970412000BB1BB5 /* MandelaUITests.swift */; };
 		D6CBCA2C2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA2B2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift */; };
-		D6CBCA4A29704F8F00BB1BB5 /* doom.html in Resources */ = {isa = PBXBuildFile; fileRef = D6CBCA4629704F8E00BB1BB5 /* doom.html */; };
 		D6CBCA4B29704F8F00BB1BB5 /* DOOMLicence.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CBCA4729704F8F00BB1BB5 /* DOOMLicence.xcassets */; };
 		D6CBCA4C29704F8F00BB1BB5 /* DOOMImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4829704F8F00BB1BB5 /* DOOMImpl.swift */; };
 		D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPowerView.swift; sourceTree = "<group>"; };
-		D65EFB9A297ACA3400ED6E5A /* engage_power.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = engage_power.m4a; sourceTree = "<group>"; };
 		D65EFB9B297ACA9D00ED6E5A /* AirPowerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPowerImpl.swift; sourceTree = "<group>"; };
 		D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierChangerView.swift; sourceTree = "<group>"; };
 		D6CBCA0B2970410700BB1BB5 /* Mandela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mandela.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +57,6 @@
 		D6CBCA252970412000BB1BB5 /* MandelaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MandelaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBCA292970412000BB1BB5 /* MandelaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelaUITests.swift; sourceTree = "<group>"; };
 		D6CBCA2B2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D6CBCA4629704F8E00BB1BB5 /* doom.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = doom.html; sourceTree = "<group>"; };
 		D6CBCA4729704F8F00BB1BB5 /* DOOMLicence.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DOOMLicence.xcassets; sourceTree = "<group>"; };
 		D6CBCA4829704F8F00BB1BB5 /* DOOMImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOOMImpl.swift; sourceTree = "<group>"; };
 		D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOOMView.swift; sourceTree = "<group>"; };
@@ -106,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */,
-				D65EFB9A297ACA3400ED6E5A /* engage_power.m4a */,
 				D65EFB9B297ACA9D00ED6E5A /* AirPowerImpl.swift */,
 			);
 			path = AirPower;
@@ -195,7 +191,6 @@
 		D6CBCA4329704F2800BB1BB5 /* DOOMLicence */ = {
 			isa = PBXGroup;
 			children = (
-				D6CBCA4629704F8E00BB1BB5 /* doom.html */,
 				D6CBCA4829704F8F00BB1BB5 /* DOOMImpl.swift */,
 				D6CBCA4729704F8F00BB1BB5 /* DOOMLicence.xcassets */,
 				D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */,
@@ -309,7 +304,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6CBCA162970412000BB1BB5 /* Preview Assets.xcassets in Resources */,
-				D6CBCA4A29704F8F00BB1BB5 /* doom.html in Resources */,
 				D6CBCA4B29704F8F00BB1BB5 /* DOOMLicence.xcassets in Resources */,
 				D6CBCA132970412000BB1BB5 /* Assets.xcassets in Resources */,
 			);

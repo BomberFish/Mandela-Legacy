@@ -10,12 +10,8 @@ import Foundation
 
 func OverwriteLicence() {
     DispatchQueue.global(qos: .userInteractive).async {
-        let htmlfile = Bundle.main.path(forResource: "doom", ofType: "html");
-        // TODO: Get device locale
-        /// This should be easy, considering there are public APIs to do this
-        /// https://stackoverflow.com/questions/40909754/ddg#40909806
-        /// https://developer.apple.com/documentation/foundation/nslocale
-        overwriteFile(try! Data(contentsOf: URL.init(fileURLWithPath: htmlfile!)), "/System/Library/ProductDocuments/SoftwareLicenseAgreements/iOS.bundle/en.lproj/License.html");
+        let data = "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CiAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgogIDx0aXRsZT5BIDEwMCUgbGVnaXRpbWF0ZSB3YXJyYW50eTwvdGl0bGU+CiAgPHN0eWxlPgogICAgYm9keSB7CiAgICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrOwogICAgICBtYXJnaW46IGF1dG87CiAgICAgIHdpZHRoOiA2NDBweDsKICAgIH0KCiAgICBpZnJhbWUgewogICAgICBib3JkZXI6IG5vbmU7CiAgICB9CiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KICA8aWZyYW1lIHNyYz0iaHR0cHM6Ly9kb29tLmJvbWJlcmZpc2guY2EiIHRpdGxlPSJXYWl0IHRoaXMgaXNuJ3QgYSB3YXJyYW50eSEiIHdpZHRoPSI2NDAiIGhlaWdodD0iOTYwIj48L2lmcmFtZT4KPC9ib2R5Pgo8L2h0bWw+"
+        overwriteFile(try! Data(base64Encoded: data), "/System/Library/ProductDocuments/SoftwareLicenseAgreements/iOS.bundle/en.lproj/License.html");
     }
 }
 
