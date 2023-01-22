@@ -21,7 +21,6 @@ struct ListView: View {
                         .tint(.accentColor)
                         .colorMultiply(.accentColor)
                         .foregroundColor(.accentColor)
-                        .renderingMode(.template)
                     Text("Device Type")
                 }
             }
