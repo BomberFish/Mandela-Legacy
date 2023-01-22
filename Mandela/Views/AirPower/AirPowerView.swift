@@ -12,7 +12,7 @@ struct AirPowerView: View {
         VStack {
             Button("Replace the Charging Sound!", action: OverwriteCharger)
                 .controlSize(.large)
-                .tint(.green)
+                .tint(.accentColor)
                 .buttonStyle(.bordered)
         }
             .navigationTitle("AirPower Sound")

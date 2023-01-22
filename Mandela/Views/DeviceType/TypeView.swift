@@ -20,7 +20,7 @@ struct TypeView: View {
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
-        .tint(.blue)
+        .tint(.accentColor)
         .buttonStyle(.bordered)
             //.onAppear {
             //let alert = UIAlertController(title: "Warning", message: "This tweak has a chance of damaging your device. By using this tweak, you agree that I (BomberFish) am not responsible for any damage that happens to your device as a result of using this tweak.", preferredStyle: .alert)
@@ -37,7 +37,7 @@ struct TypeView: View {
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
-        .tint(.blue)
+        .tint(.accentColor)
         .buttonStyle(.bordered)
         }
         Button{
@@ -49,7 +49,7 @@ struct TypeView: View {
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
-        .tint(.blue)
+        .tint(.accentColor)
         .buttonStyle(.bordered)
             
             Button{
@@ -61,7 +61,7 @@ struct TypeView: View {
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
-        .tint(.blue)
+        .tint(.accentColor)
         .buttonStyle(.bordered)
             
             Button{
@@ -73,7 +73,7 @@ struct TypeView: View {
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
-        .tint(.blue)
+        .tint(.accentColor)
         .buttonStyle(.bordered)
             
             Button{
@@ -85,7 +85,7 @@ struct TypeView: View {
                 .tint(Color(UIColor.label))
         }
         .controlSize(.large)
-        .tint(.blue)
+        .tint(.accentColor)
         .buttonStyle(.bordered)
             
             

@@ -18,7 +18,10 @@ struct ListView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 16)
-                        .tint(Color(UIColor.label))
+                        .tint(.accentColor)
+                        .colorMultiply(.accentColor)
+                        .foregroundColor(.accentColor)
+                        .renderingMode(.template)
                     Text("Device Type")
                 }
             }
