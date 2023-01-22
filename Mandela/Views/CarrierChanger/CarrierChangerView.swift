@@ -12,7 +12,7 @@ struct CarrierChangerView: View {
         VStack {
             Button("Change the Carrier Name!", action: OverwriteCharger)
                 .controlSize(.large)
-                .tint(.green)
+                .tint(.accentColor)
                 .buttonStyle(.bordered)
             Text("WARNING: This tweak is currently BROKEN. Use at your own risk")
                 .font(.system(size: 16, design: .monospaced))

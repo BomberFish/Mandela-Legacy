@@ -12,7 +12,7 @@ struct DOOMView: View {
         VStack {
             Button("Replace the iOS Licence page! (English)", action: OverwriteLicence)
                 .controlSize(.large)
-                .tint(.red)
+                .tint(.accentColor)
                 .buttonStyle(.bordered)
         }
         Text("DOOM is property of id Software and ZeniMax Media. All rights reserved.")
