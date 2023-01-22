@@ -13,7 +13,7 @@ struct TypeView: View {
         if #available(iOS 16, *) {
             Button{
                 plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
-            }   
+            }
         label: {
             Text("iPhone 14 Pro Max")
             Image("iphone.gen3").resizable().frame(width: 13, height: 16)
@@ -22,11 +22,11 @@ struct TypeView: View {
         .controlSize(.large)
         .tint(.blue)
         .buttonStyle(.bordered)
-        //.onAppear {
-        //let alert = UIAlertController(title: "Warning", message: "This tweak has a chance of damaging your device. By using this tweak, you agree that I (BomberFish) am not responsible for any damage that happens to your device as a result of using this tweak.", preferredStyle: .alert)
-        //alert.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
-        //UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
-        //}
+            //.onAppear {
+            //let alert = UIAlertController(title: "Warning", message: "This tweak has a chance of damaging your device. By using this tweak, you agree that I (BomberFish) am not responsible for any damage that happens to your device as a result of using this tweak.", preferredStyle: .alert)
+            //alert.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
+            //UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
+            //}
             
             Button{
                 plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
@@ -39,10 +39,10 @@ struct TypeView: View {
         .controlSize(.large)
         .tint(.blue)
         .buttonStyle(.bordered)
-            
-            Button{
-                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2532)
-            }
+        }
+        Button{
+            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2532)
+        }
         label: {
             Text("iPhone 12/13 Pro")
             Image("iphone.gen2").resizable().frame(width: 13, height: 16)
