@@ -39,8 +39,8 @@ struct ListView: View {
             
             NavigationLink(destination: Mandela.AirPowerView()) {
                 HStack {
-                    // Waves Icon
-                    Image(systemName: "dot.radiowaves.left.and.right")
+                    // Bolt Icon
+                    Image(systemName: "bolt.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 32)
@@ -50,8 +50,8 @@ struct ListView: View {
             
             NavigationLink(destination: Mandela.CarrierChangerView()) {
                 HStack {
-                    // Cellular Icon
-                    Image(systemName: "cellularbars")
+                    // Antenna Icon
+                    Image(systemName: "antenna.radiowaves.left.and.right")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 32)
