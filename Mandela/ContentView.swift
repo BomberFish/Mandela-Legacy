@@ -73,23 +73,10 @@ struct ContentView: View {
             ListView()
                 // MARK: - Top bar
                 .toolbar {
-                    
-                    //Info button
-                    Button(action: { showInfo = true }) {
-                        Image(systemName: "info.circle")
-                    }
-                    
                     // Respring button
                     Button(action: {respring()}){
                         Image(systemName: "arrow.counterclockwise.circle")
                         Text("Respring")
-                    }
-                    
-                    .alert(isPresented: $showInfo) {
-                        Alert(
-                            title: Text("Mandela " + appVersion),
-                            message: Text("Developed by BomberFish. Tweaks may damage your device, use this app at your own risk.")
-                        )
                     }
                 }
         }
