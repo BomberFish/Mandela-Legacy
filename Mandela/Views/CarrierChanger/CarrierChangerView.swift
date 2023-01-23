@@ -14,7 +14,7 @@ struct CarrierChangerView: View {
                 .controlSize(.large)
                 .tint(.accentColor)
                 .buttonStyle(.bordered)
-            Text("WARNING: This tweak is currently BROKEN. Use at your own risk.")
+            Text("WARNING: Whether this tweak works is currently UNKNOWN. Here be dragons.")
                 .font(.system(size: 16, design: .monospaced))
                 .frame (maxWidth: .infinity, alignment: .center)
                 .padding()
