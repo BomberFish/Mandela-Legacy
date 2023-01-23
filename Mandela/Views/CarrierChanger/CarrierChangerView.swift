@@ -10,7 +10,7 @@ import SwiftUI
 struct CarrierChangerView: View {
     var body: some View {
         VStack {
-            Button("Change the Carrier Name!", action: OverwriteCharger)
+            Button("Change the Carrier Name!", action: NamePrompt())
                 .controlSize(.large)
                 .tint(.accentColor)
                 .buttonStyle(.bordered)
