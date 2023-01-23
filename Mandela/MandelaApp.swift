@@ -18,6 +18,7 @@ struct MandelaApp: App {
                 // Cool looking effect stolen from the testicular discomfort jailbreak
                 .scaleEffect(triggerRespring ? 0.95 : 1)
                 .brightness(triggerRespring ? -1 : 0)
+                .preferredColorScheme(.dark)
                 .statusBarHidden(triggerRespring)
                 // MARK: - Restarts springboard
                 .onChange(of: triggerRespring) { _ in
