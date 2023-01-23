@@ -30,9 +30,8 @@ struct ListView: View {
                 HStack {
                     // Controller Icon
                     Image(systemName: "gamecontroller")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 32)
+                        .tint(.accentColor)
+                        .foregroundColor(.accentColor)
                     Text("Replace Licence with DOOM")
                 }
             }
@@ -41,9 +40,8 @@ struct ListView: View {
                 HStack {
                     // Bolt Icon
                     Image(systemName: "bolt.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 32)
+                        .tint(.accentColor)
+                        .foregroundColor(.accentColor)
                     Text("AirPower Charging Sound")
                 }
             }
@@ -52,9 +50,8 @@ struct ListView: View {
                 HStack {
                     // Antenna Icon
                     Image(systemName: "antenna.radiowaves.left.and.right")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 32)
+                        .tint(.accentColor)
+                        .foregroundColor(.accentColor)
                     Text("Change Carrier Name")
                 }
             }
