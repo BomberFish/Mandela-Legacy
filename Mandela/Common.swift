@@ -6,7 +6,8 @@
 //
 
 import Foundation
-// MARK: - plist editing function
+
+// MARK: - plist editing function (string)
 func plistChangeStr(plistPath: String, key: String, value: String) {
     let stringsData = try! Data(contentsOf: URL(fileURLWithPath: plistPath))
     
@@ -31,7 +32,7 @@ func plistChangeStr(plistPath: String, key: String, value: String) {
     overwriteFile(newData, plistPath)
 }
 
-// MARK: - plist editing function
+// MARK: - plist editing function (integer)
 func plistChangeInt(plistPath: String, key: String, value: Int) {
 let stringsData = try! Data(contentsOf: URL(fileURLWithPath: plistPath))
 
