@@ -1,5 +1,5 @@
 //
-//  SuperviseView.swift
+//  MuteView.swift
 //  Mandela
 //
 //  Created by Hariz Shirazi on 2023-01-26.
@@ -7,41 +7,41 @@
 
 import SwiftUI
 
-struct SuperviseView: View {
+struct MuteView: View {
     var body: some View {
         VStack {
             Button{
-                Supervise()
+                EnableMute()
             }
             label: {
-                Image(systemName: "lock.iphone")
+                Image(systemName: "bell.fill")
                     .tint(.accentColor)
                     .foregroundColor(.accentColor)
-                Text("Supervise")
+                Text("Enable")
             }
             .controlSize(.large)
             .tint(.accentColor)
             .buttonStyle(.bordered)
             
             Button{
-                Unsupervise()
+                DisableMute()
             }
             label: {
-                Image(systemName: "lock.open.iphone")
+                Image(systemName: "bell.slash.fill")
                     .tint(.accentColor)
                     .foregroundColor(.accentColor)
-                Text("Unsupervise")
+                Text("Disable")
             }
             .controlSize(.large)
             .tint(.accentColor)
             .buttonStyle(.bordered)
         }
-            .navigationTitle("Supervise")
+            .navigationTitle("Mute toggle")
     }
 }
 
-struct SuperviseView_Previews: PreviewProvider {
+struct MuteView_Previews: PreviewProvider {
     static var previews: some View {
-        SuperviseView()
+        MuteView()
     }
 }

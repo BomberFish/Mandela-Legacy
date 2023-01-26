@@ -17,7 +17,7 @@ struct ListView: View {
                     Image("iphone.gen3")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 16)
+                        .frame(width: 12)
                         .tint(.accentColor)
                         .colorMultiply(.accentColor)
                         .foregroundColor(.accentColor)
@@ -28,8 +28,8 @@ struct ListView: View {
             // Any OS
             NavigationLink(destination: Mandela.DOOMView()) {
                 HStack {
-                    // Controller Icon
-                    Image(systemName: "gamecontroller")
+                    // Document Icon
+                    Image(systemName: "doc.append")
                         .tint(.accentColor)
                         .foregroundColor(.accentColor)
                     Text("Replace Licence with DOOM")
@@ -53,6 +53,26 @@ struct ListView: View {
                         .tint(.accentColor)
                         .foregroundColor(.accentColor)
                     Text("Change Carrier Name")
+                }
+            }
+            
+            NavigationLink(destination: Mandela.SuperviseView()) {
+                HStack {
+                    // Lock Icon
+                    Image(systemName: "lock.iphone")
+                        .tint(.accentColor)
+                        .foregroundColor(.accentColor)
+                    Text("Supervise")
+                }
+            }
+            
+            NavigationLink(destination: Mandela.MuteView()) {
+                HStack {
+                    // Mute Icon
+                    Image(systemName: "bell.slash.fill")
+                        .tint(.accentColor)
+                        .foregroundColor(.accentColor)
+                    Text("Mute Switch in Control Center")
                 }
             }
         }

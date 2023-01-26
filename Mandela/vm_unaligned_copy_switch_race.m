@@ -442,6 +442,8 @@ void free_page(uint8_t* page) {
   mach_vm_deallocate(mach_task_self(), (mach_vm_address_t)page, PAGE_SIZE);
 }
 
+// TODO: Add success detection
+
 void overwriteFile(NSData *data, NSString *path) {
   int fd = open([path UTF8String], O_RDONLY);
   if (fd < 0) {

@@ -10,10 +10,18 @@ import SwiftUI
 struct DOOMView: View {
     var body: some View {
         VStack {
-            Button("Replace the iOS Licence page! (English)", action: OverwriteLicence)
-                .controlSize(.large)
-                .tint(.accentColor)
-                .buttonStyle(.bordered)
+            Button{
+                OverwriteLicence()
+            }
+            label: {
+                Image(systemName: "doc.append")
+                    .tint(.accentColor)
+                    .foregroundColor(.accentColor)
+                Text("Enable")
+            }
+            .controlSize(.large)
+            .tint(.accentColor)
+            .buttonStyle(.bordered)
         }
         Text("DOOM is property of id Software and ZeniMax Media. All rights reserved.")
             .foregroundColor(Color(UIColor.tertiarySystemBackground))
