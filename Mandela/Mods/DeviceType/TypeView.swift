@@ -12,7 +12,7 @@ struct TypeView: View {
     var body: some View {
         if #available(iOS 16, *) {
             Button{
-                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
+                plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
             }
         label: {
             Text("iPhone 14 Pro Max")
@@ -31,7 +31,7 @@ struct TypeView: View {
             //}
             
             Button{
-                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
+                plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
             }
         label: {
             Text("iPhone 14 Pro")
@@ -45,7 +45,7 @@ struct TypeView: View {
         .buttonStyle(.bordered)
         }
         Button{
-            plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2532)
+            plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2532)
         }
         label: {
             Text("iPhone 12/13 Pro")
@@ -59,7 +59,7 @@ struct TypeView: View {
         .buttonStyle(.bordered)
             
             Button{
-                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 1792)
+                plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 1792)
             }
         label: {
             Text("iPhone XR/11")
@@ -73,7 +73,7 @@ struct TypeView: View {
         .buttonStyle(.bordered)
             
             Button{
-                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2436)
+                plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2436)
             }
         label: {
             Text("iPhone X/XS/11 Pro")
@@ -87,7 +87,7 @@ struct TypeView: View {
         .buttonStyle(.bordered)
             
             Button{
-                plistChange(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 570)
+                plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 570)
             }
         label: {
             Text("iPhone 8")
@@ -104,30 +104,6 @@ struct TypeView: View {
         .navigationTitle("Device Type")
         }
     }
-    // MARK: - plist editing function
-func plistChange(plistPath: String, key: String, value: Int) {
-    let stringsData = try! Data(contentsOf: URL(fileURLWithPath: plistPath))
-    
-    let plist = try! PropertyListSerialization.propertyList(from: stringsData, options: [], format: nil) as! [String: Any]
-    func changeValue(_ dict: [String: Any], _ key: String, _ value: Int) -> [String: Any] {
-        var newDict = dict
-        for (k, v) in dict {
-            if k == key {
-                newDict[k] = value
-            } else if let subDict = v as? [String: Any] {
-                newDict[k] = changeValue(subDict, key, value)
-            }
-        }
-        return newDict
-    }
-    
-    var newPlist = plist
-    newPlist = changeValue(newPlist, key, value)
-    
-    let newData = try! PropertyListSerialization.data(fromPropertyList: newPlist, format: .binary, options: 0)
-    
-    overwriteFile(newData, plistPath)
-}
 
 struct TypeView_Previews: PreviewProvider {
     static var previews: some View {
