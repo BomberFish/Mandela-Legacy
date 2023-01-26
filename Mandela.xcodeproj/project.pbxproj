@@ -140,7 +140,7 @@
 		D6CBCA0D2970410700BB1BB5 /* Mandela */ = {
 			isa = PBXGroup;
 			children = (
-				D6CBCA3C297046CE00BB1BB5 /* Views */,
+				D6CBCA3C297046CE00BB1BB5 /* Mods */,
 				D6CBCA0E2970410700BB1BB5 /* MandelaApp.swift */,
 				D6CBCA102970410700BB1BB5 /* ContentView.swift */,
 				D6DFDA5529705BEA002E2748 /* Mandela-Bridging-Header.h */,
@@ -177,7 +177,7 @@
 			path = MandelaUITests;
 			sourceTree = "<group>";
 		};
-		D6CBCA3C297046CE00BB1BB5 /* Views */ = {
+		D6CBCA3C297046CE00BB1BB5 /* Mods */ = {
 			isa = PBXGroup;
 			children = (
 				D65EFB9E297ACB5700ED6E5A /* CarrierChanger */,
@@ -185,7 +185,7 @@
 				D60DB6D929737AC100B4FAC8 /* DeviceType */,
 				D6CBCA4329704F2800BB1BB5 /* DOOMLicence */,
 			);
-			path = Views;
+			path = Mods;
 			sourceTree = "<group>";
 		};
 		D6CBCA4329704F2800BB1BB5 /* DOOMLicence */ = {
