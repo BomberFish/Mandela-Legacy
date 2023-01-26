@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // MARK: - plist editing function (string)
 func plistChangeStr(plistPath: String, key: String, value: String) {

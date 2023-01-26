@@ -17,6 +17,7 @@
 #include <libkern/OSAtomic.h> // I want a real spinlock!
 #include <sys/time.h>
 #include "vm_unaligned_copy_switch_race.h"
+#import <Mandela-Swift.h> // Expose header from swift
 
 char* get_temp_file_path(void) {
   return strdup([[NSTemporaryDirectory() stringByAppendingPathComponent:@"AAAAs"] fileSystemRepresentation]);
