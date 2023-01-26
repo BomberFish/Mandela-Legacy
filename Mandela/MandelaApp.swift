@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+var message = ""
+    
 @main
 struct MandelaApp: App {
     // Trigger respring
@@ -15,7 +17,7 @@ struct MandelaApp: App {
         WindowGroup {
             // Pass triggerRespring to ContentView
             ContentView(triggerRespring: $triggerRespring)
-                // Cool looking effect stolen from the testicular discomfort jailbreak
+                // Cool looking respring effect stolen from ballpa1n
                 .scaleEffect(triggerRespring ? 0.95 : 1)
                 .brightness(triggerRespring ? -1 : 0)
                 .preferredColorScheme(.dark)

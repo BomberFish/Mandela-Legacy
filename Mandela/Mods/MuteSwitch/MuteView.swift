@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MuteView: View {
+    @State private var updatedMessage = message
     var body: some View {
         VStack {
             Button{
@@ -35,6 +36,11 @@ struct MuteView: View {
             .controlSize(.large)
             .tint(.accentColor)
             .buttonStyle(.bordered)
+            Text(message)
+                .font(.system(size: 14))
+                .frame (maxWidth: .infinity, alignment: .center)
+                .padding()
+                .foregroundColor(Color(UIColor.systemGray))
         }
             .navigationTitle("Mute toggle")
     }

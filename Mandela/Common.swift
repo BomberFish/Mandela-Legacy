@@ -57,3 +57,15 @@ let newData = try! PropertyListSerialization.data(fromPropertyList: newPlist, fo
 
 overwriteFile(newData, plistPath)
 }
+
+//func setMessage(value: String) {
+//    message = value
+//    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+//        message=""
+//    }
+//}
+
+@_cdecl("setMessage")
+func setMessage(str: String) {
+        message = str    
+}

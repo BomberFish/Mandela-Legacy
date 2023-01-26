@@ -87,10 +87,16 @@ struct ListView: View {
 struct ContentView: View {
     @Binding var triggerRespring: Bool
     @State private var showInfo = false;
+    @State private var updatedMessage = message
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     var body: some View {
         NavigationView {
             ListView()
+            Text(message)
+                .font(.system(size: 14))
+                .frame (maxWidth: .infinity, alignment: .center)
+                .padding()
+                .foregroundColor(Color(UIColor.systemGray))
                 // MARK: - Top bar
                 .toolbar {
                     // Respring button

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DOOMView: View {
+    @State private var updatedMessage = message
     var body: some View {
         VStack {
             Button{
@@ -22,6 +23,11 @@ struct DOOMView: View {
             .controlSize(.large)
             .tint(.accentColor)
             .buttonStyle(.bordered)
+            Text(message)
+                .font(.system(size: 14))
+                .frame (maxWidth: .infinity, alignment: .center)
+                .padding()
+                .foregroundColor(Color(UIColor.systemGray))
         }
         Text("DOOM is property of id Software and ZeniMax Media. All rights reserved.")
             .foregroundColor(Color(UIColor.tertiarySystemBackground))

