@@ -24,6 +24,8 @@
 		D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */; };
 		D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */; };
 		D6FF339A29842AE100013438 /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FF339929842AE100013438 /* VersionView.swift */; };
+		D6FF33B229845CF900013438 /* tccd-hijack.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF33AF29845CF800013438 /* tccd-hijack.m */; };
+		D6FF33B329845CF900013438 /* extras.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF33B129845CF900013438 /* extras.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		D6DFDA5629705D20002E2748 /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
 		D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vm_unaligned_copy_switch_race.m; sourceTree = "<group>"; };
 		D6FF339929842AE100013438 /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
+		D6FF33AE29845CF800013438 /* tccd-hijack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "tccd-hijack.h"; sourceTree = "<group>"; };
+		D6FF33AF29845CF800013438 /* tccd-hijack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "tccd-hijack.m"; sourceTree = "<group>"; };
+		D6FF33B029845CF800013438 /* extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extras.h; sourceTree = "<group>"; };
+		D6FF33B129845CF900013438 /* extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = extras.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,10 @@
 				D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */,
 				D68E987F2982B75300F55CD6 /* Common.swift */,
 				D6DFDA5629705D20002E2748 /* vm_unaligned_copy_switch_race.h */,
+				D6FF33B029845CF800013438 /* extras.h */,
+				D6FF33B129845CF900013438 /* extras.m */,
+				D6FF33AE29845CF800013438 /* tccd-hijack.h */,
+				D6FF33AF29845CF800013438 /* tccd-hijack.m */,
 				D6CBCA122970412000BB1BB5 /* Assets.xcassets */,
 				D6CBCA142970412000BB1BB5 /* Preview Content */,
 			);
@@ -362,11 +372,13 @@
 				D6CBCA112970410700BB1BB5 /* ContentView.swift in Sources */,
 				D68E98802982B75300F55CD6 /* Common.swift in Sources */,
 				D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.m in Sources */,
+				D6FF33B229845CF900013438 /* tccd-hijack.m in Sources */,
 				D6FF339A29842AE100013438 /* VersionView.swift in Sources */,
 				D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */,
 				D6CBCA0F2970410700BB1BB5 /* MandelaApp.swift in Sources */,
 				D65EFB99297AC95A00ED6E5A /* AirPowerView.swift in Sources */,
 				D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */,
+				D6FF33B329845CF900013438 /* extras.m in Sources */,
 				D68E98842982B97800F55CD6 /* MuteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
