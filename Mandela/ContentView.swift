@@ -94,8 +94,14 @@ struct ContentView: View {
         VStack {
             NavigationView {
                 ListView()
+                    .toolbar {
+                        // Respring button
+                        Button(action: {respring()}){
+                            Image(systemName: "arrow.counterclockwise.circle")
+                            Text("Respring")
+                        }	
             }
-            HStack {
+            VStack {
                 Image(systemName: currentSymbol)
                     .foregroundColor(Color(UIColor.systemGray))
                 Text(message)
@@ -106,12 +112,6 @@ struct ContentView: View {
             }
             Text("Mandela " + appVersion + ", iOS " + systemVersion)
         }
-        .toolbar {
-            // Respring button
-            Button(action: {respring()}){
-                Image(systemName: "arrow.counterclockwise.circle")
-                Text("Respring")
-            }
         }
     }
     

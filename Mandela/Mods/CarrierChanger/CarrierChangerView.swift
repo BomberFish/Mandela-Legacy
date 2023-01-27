@@ -21,11 +21,14 @@ struct CarrierChangerView: View {
                     .foregroundColor(.accentColor)
                 Text("Enable")
             }
+            .controlSize(.large)
+            .tint(.accentColor)
+            .buttonStyle(.bordered)
             Text("WARNING: Whether this tweak works is currently UNKNOWN. Here be dragons.")
                 .font(.system(size: 16))
                 .frame (maxWidth: .infinity, alignment: .center)
                 .padding()
-            HStack {
+            VStack {
                 Image(systemName: currentSymbol)
                     .foregroundColor(Color(UIColor.systemGray))
                 Text(message)

@@ -21,7 +21,11 @@ struct AirPowerView: View {
                     .foregroundColor(.accentColor)
                 Text("Enable")
             }
-            HStack {
+            .controlSize(.large)
+            .tint(.accentColor)
+            .buttonStyle(.bordered)
+            
+            VStack {
                 Image(systemName: currentSymbol)
                     .foregroundColor(Color(UIColor.systemGray))
                 Text(message)

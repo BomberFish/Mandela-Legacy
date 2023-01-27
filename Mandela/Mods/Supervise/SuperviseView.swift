@@ -38,7 +38,7 @@ struct SuperviseView: View {
             .controlSize(.large)
             .tint(.accentColor)
             .buttonStyle(.bordered)
-            HStack {
+            VStack {
                 Image(systemName: currentSymbol)
                     .foregroundColor(Color(UIColor.systemGray))
                 Text(message)

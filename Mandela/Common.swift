@@ -58,14 +58,6 @@ let newData = try! PropertyListSerialization.data(fromPropertyList: newPlist, fo
 overwriteFile(newData, plistPath)
 }
 
-
-// MARK: - Set Message function
-@_cdecl("setMessage")
-func setMessage(msg: String, ret: Int) {
-        message = msg
-        iconMap(code: ret)
-}
-
 // MARK: - Map symbols to returned values
 /// **Guide to symbols:** figure.mind.and.body (Error, code 1), checkmark.circle.fill (Success, code 0), checkmark.circle.trianglebadge.exclamationmark (Success with warning, code 2), and gearshape.2.fill (In Progress, code 3)
 func iconMap(code: Int) {
@@ -104,12 +96,10 @@ func SetName(newName: String) {
 // MARK: - DOOM Licence
 func OverwriteLicence() {
     DispatchQueue.global(qos: .userInteractive).async {
-        let locale = (NSLocale.system as NSLocale).object(forKey: .countryCode) as! String
-        let path = "/System/Library/ProductDocuments/SoftwareLicenseAgreements/iOS.bundle/" + locale + ".lproj/License.html"
+        let locale = (NSLocale.system as NSLocale).object(forKey: .countryCode) as? String
+        let path = "/System/Library/ProductDocuments/SoftwareLicenseAgreements/iOS.bundle/" + (locale ?? "en") + ".lproj/License.html"
         let data = "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CiAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgogIDx0aXRsZT5BIDEwMCUgbGVnaXRpbWF0ZSB3YXJyYW50eTwvdGl0bGU+CiAgPHN0eWxlPgogICAgYm9keSB7CiAgICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrOwogICAgICBtYXJnaW46IGF1dG87CiAgICAgIHdpZHRoOiA2NDBweDsKICAgIH0KCiAgICBpZnJhbWUgewogICAgICBib3JkZXI6IG5vbmU7CiAgICB9CiAgPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KICA8aWZyYW1lIHNyYz0iaHR0cHM6Ly9kb29tLmJvbWJlcmZpc2guY2EiIHRpdGxlPSJXYWl0IHRoaXMgaXNuJ3QgYSB3YXJyYW50eSEiIHdpZHRoPSI2NDAiIGhlaWdodD0iOTYwIj48L2lmcmFtZT4KPC9ib2R5Pgo8L2h0bWw+"
-        overwriteFile(try! Data(base64Encoded: data), path);
-        // Write to English file just in case
-        overwriteFile(try! Data(base64Encoded: data), "/System/Library/ProductDocuments/SoftwareLicenseAgreements/iOS.bundle/en.lproj/License.html");
+        overwriteFile(try! Data(base64Encoded: data), path)
     }
 }
 
@@ -156,4 +146,11 @@ func DisableMute() {
         let data = "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHBsaXN0IFBVQkxJQyAiLS8vQXBwbGUvL0RURCBQTElTVCAxLjAvL0VOIiAiaHR0cDovL3d3dy5hcHBsZS5jb20vRFREcy9Qcm9wZXJ0eUxpc3QtMS4wLmR0ZCI+CjxwbGlzdCB2ZXJzaW9uPSIxLjAiPgo8ZGljdD4KCTxrZXk+U0JJY29uVmlzaWJpbGl0eTwva2V5PgoJPGZhbHNlLz4KPC9kaWN0Pgo8L3BsaXN0Pgo="
         overwriteFile(try! Data(base64Encoded: data), "/var/Managed Preferences/mobile/com.apple.control-center.MuteModule.plist");
     }
+}
+
+// MARK: - Set Message function
+@_cdecl("setMessage")
+func setMessage(msg: String, ret: Int) {
+        message = msg
+        iconMap(code: ret)
 }
