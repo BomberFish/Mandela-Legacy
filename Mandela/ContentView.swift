@@ -92,11 +92,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ListView()
-            Text(message)
-                .font(.system(size: 14))
-                .frame (maxWidth: .infinity, alignment: .center)
-                .padding()
-                .foregroundColor(Color(UIColor.systemGray))
                 // MARK: - Top bar
                 .toolbar {
                     // Respring button
@@ -105,6 +100,15 @@ struct ContentView: View {
                         Text("Respring")
                     }
                 }
+        }
+        HStack {
+            Image(systemName: currentSymbol)
+                .tint(Color(UIColor.systemGray))
+            Text(message)
+                .font(.system(size: 14))
+                .frame (maxWidth: .infinity, alignment: .center)
+                .padding()
+                .foregroundColor(Color(UIColor.systemGray))
         }
     }
     

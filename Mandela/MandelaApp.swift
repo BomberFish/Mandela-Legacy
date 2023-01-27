@@ -8,7 +8,7 @@
 import SwiftUI
 
 var message = ""
-var returned = 0
+var currentSymbol = ""
     
 @main
 struct MandelaApp: App {

@@ -95,11 +95,15 @@ struct TypeView: View {
         .controlSize(.large)
         .tint(.accentColor)
         .buttonStyle(.bordered)
-        Text(message)
-            .font(.system(size: 14))
-            .frame (maxWidth: .infinity, alignment: .center)
-            .padding()
-            .foregroundColor(Color(UIColor.systemGray))
+        HStack {
+            Image(systemName: currentSymbol)
+                .tint(Color(UIColor.systemGray))
+            Text(message)
+                .font(.system(size: 14))
+                .frame (maxWidth: .infinity, alignment: .center)
+                .padding()
+                .foregroundColor(Color(UIColor.systemGray))
+        }
             
             
         .navigationTitle("Device Type")

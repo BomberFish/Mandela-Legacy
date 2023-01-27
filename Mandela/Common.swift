@@ -58,10 +58,24 @@ let newData = try! PropertyListSerialization.data(fromPropertyList: newPlist, fo
 overwriteFile(newData, plistPath)
 }
 
-// TODO: Use the following for status icons: figure.mind.and.body (Error, code 1), checkmark.circle.fill (Success, code 0), checkmark.circle.trianglebadge.exclamationmark (Success with warning, code 2), and gearshape.2.fill (In Progress, code 3)
 
+// MARK: - Set Message function
 @_cdecl("setMessage")
 func setMessage(msg: String, ret: Int) {
         message = msg
-        returned = ret
+}
+
+// MARK: - Map symbols to returned values
+/// **Guide to symbols:** figure.mind.and.body (Error, code 1), checkmark.circle.fill (Success, code 0), checkmark.circle.trianglebadge.exclamationmark (Success with warning, code 2), and gearshape.2.fill (In Progress, code 3)
+func iconMap(code: Int) {
+    switch code {
+        case 3:
+            currentSymbol = "gearshape.2.fill"
+        case 2:
+            currentSymbol = "checkmark.circle.trianglebadge.exclamationmark"
+        case 1:
+            currentSymbol = "figure.mind.and.body"
+        default:
+            currentSymbol = "gearshape.2.fill"
+    }
 }
