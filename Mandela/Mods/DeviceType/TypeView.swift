@@ -12,6 +12,7 @@ struct TypeView: View {
     let mobilegestalt = "/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist"
     var body: some View {
         if #available(iOS 16, *) {
+            // MARK: iPhone 14 Pro Max
             Button{
                 impactVibrate()
                 plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
@@ -26,7 +27,7 @@ struct TypeView: View {
         .controlSize(.large)
         .tint(.accentColor)
         .buttonStyle(.bordered)
-            
+            // MARK: iPhone 14 Pro
             Button{
                 impactVibrate()
                 plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
@@ -42,6 +43,7 @@ struct TypeView: View {
         .tint(.accentColor)
         .buttonStyle(.bordered)
         }
+        // MARK: iPhone 12/13 Pro
         Button{
             impactVibrate()
             plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2532)
@@ -56,7 +58,7 @@ struct TypeView: View {
         .controlSize(.large)
         .tint(.accentColor)
         .buttonStyle(.bordered)
-            
+        // MARK: iPhone XR/11
             Button{
                 impactVibrate()
                 plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 1792)
@@ -76,6 +78,7 @@ struct TypeView: View {
                 impactVibrate()
                 plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2436)
             }
+        // MARK: iPhone X/XS/11 Pro
         label: {
             Image("iphone.gen2").resizable().frame(width: 13, height: 16)
                 .tint(.accentColor)
@@ -86,7 +89,7 @@ struct TypeView: View {
         .controlSize(.large)
         .tint(.accentColor)
         .buttonStyle(.bordered)
-            
+        // MARK: iPhone 8
             Button{
                 impactVibrate()
                 plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 570)

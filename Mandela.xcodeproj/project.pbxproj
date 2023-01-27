@@ -9,13 +9,10 @@
 /* Begin PBXBuildFile section */
 		D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */; };
 		D65EFB99297AC95A00ED6E5A /* AirPowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */; };
-		D65EFB9C297ACA9D00ED6E5A /* AirPowerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EFB9B297ACA9D00ED6E5A /* AirPowerImpl.swift */; };
 		D65EFBA0297ACB6B00ED6E5A /* CarrierChangerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */; };
 		D68E987E2982B73E00F55CD6 /* SuperviseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E987D2982B73E00F55CD6 /* SuperviseView.swift */; };
 		D68E98802982B75300F55CD6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E987F2982B75300F55CD6 /* Common.swift */; };
-		D68E98822982B82E00F55CD6 /* SuperviseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E98812982B82E00F55CD6 /* SuperviseImpl.swift */; };
 		D68E98842982B97800F55CD6 /* MuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E98832982B97800F55CD6 /* MuteView.swift */; };
-		D68E98862982B99200F55CD6 /* MuteImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E98852982B99200F55CD6 /* MuteImpl.swift */; };
 		D6CBCA0F2970410700BB1BB5 /* MandelaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA0E2970410700BB1BB5 /* MandelaApp.swift */; };
 		D6CBCA112970410700BB1BB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA102970410700BB1BB5 /* ContentView.swift */; };
 		D6CBCA132970412000BB1BB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CBCA122970412000BB1BB5 /* Assets.xcassets */; };
@@ -24,9 +21,7 @@
 		D6CBCA2A2970412000BB1BB5 /* MandelaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA292970412000BB1BB5 /* MandelaUITests.swift */; };
 		D6CBCA2C2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA2B2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift */; };
 		D6CBCA4B29704F8F00BB1BB5 /* DOOMLicence.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CBCA4729704F8F00BB1BB5 /* DOOMLicence.xcassets */; };
-		D6CBCA4C29704F8F00BB1BB5 /* DOOMImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4829704F8F00BB1BB5 /* DOOMImpl.swift */; };
 		D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */; };
-		D6D63AE2297AF08E003D10AD /* CarrierChangerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D63AE1297AF08E003D10AD /* CarrierChangerImpl.swift */; };
 		D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */; };
 /* End PBXBuildFile section */
 
@@ -50,13 +45,10 @@
 /* Begin PBXFileReference section */
 		D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPowerView.swift; sourceTree = "<group>"; };
-		D65EFB9B297ACA9D00ED6E5A /* AirPowerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPowerImpl.swift; sourceTree = "<group>"; };
 		D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierChangerView.swift; sourceTree = "<group>"; };
 		D68E987D2982B73E00F55CD6 /* SuperviseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperviseView.swift; sourceTree = "<group>"; };
 		D68E987F2982B75300F55CD6 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		D68E98812982B82E00F55CD6 /* SuperviseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperviseImpl.swift; sourceTree = "<group>"; };
 		D68E98832982B97800F55CD6 /* MuteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteView.swift; sourceTree = "<group>"; };
-		D68E98852982B99200F55CD6 /* MuteImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteImpl.swift; sourceTree = "<group>"; };
 		D6CBCA0B2970410700BB1BB5 /* Mandela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mandela.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CBCA0E2970410700BB1BB5 /* MandelaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelaApp.swift; sourceTree = "<group>"; };
 		D6CBCA102970410700BB1BB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,9 +60,7 @@
 		D6CBCA292970412000BB1BB5 /* MandelaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelaUITests.swift; sourceTree = "<group>"; };
 		D6CBCA2B2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D6CBCA4729704F8F00BB1BB5 /* DOOMLicence.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DOOMLicence.xcassets; sourceTree = "<group>"; };
-		D6CBCA4829704F8F00BB1BB5 /* DOOMImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOOMImpl.swift; sourceTree = "<group>"; };
 		D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOOMView.swift; sourceTree = "<group>"; };
-		D6D63AE1297AF08E003D10AD /* CarrierChangerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierChangerImpl.swift; sourceTree = "<group>"; };
 		D6DFDA5529705BEA002E2748 /* Mandela-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mandela-Bridging-Header.h"; sourceTree = "<group>"; };
 		D6DFDA5629705D20002E2748 /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
 		D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vm_unaligned_copy_switch_race.m; sourceTree = "<group>"; };
@@ -113,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */,
-				D65EFB9B297ACA9D00ED6E5A /* AirPowerImpl.swift */,
 			);
 			path = AirPower;
 			sourceTree = "<group>";
@@ -122,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */,
-				D6D63AE1297AF08E003D10AD /* CarrierChangerImpl.swift */,
 			);
 			path = CarrierChanger;
 			sourceTree = "<group>";
@@ -131,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				D68E987D2982B73E00F55CD6 /* SuperviseView.swift */,
-				D68E98812982B82E00F55CD6 /* SuperviseImpl.swift */,
 			);
 			path = Supervise;
 			sourceTree = "<group>";
@@ -140,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				D68E98832982B97800F55CD6 /* MuteView.swift */,
-				D68E98852982B99200F55CD6 /* MuteImpl.swift */,
 			);
 			path = MuteSwitch;
 			sourceTree = "<group>";
@@ -222,7 +208,6 @@
 		D6CBCA4329704F2800BB1BB5 /* DOOMLicence */ = {
 			isa = PBXGroup;
 			children = (
-				D6CBCA4829704F8F00BB1BB5 /* DOOMImpl.swift */,
 				D6CBCA4729704F8F00BB1BB5 /* DOOMLicence.xcassets */,
 				D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */,
 			);
@@ -362,19 +347,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D68E987E2982B73E00F55CD6 /* SuperviseView.swift in Sources */,
-				D65EFB9C297ACA9D00ED6E5A /* AirPowerImpl.swift in Sources */,
 				D65EFBA0297ACB6B00ED6E5A /* CarrierChangerView.swift in Sources */,
 				D6CBCA112970410700BB1BB5 /* ContentView.swift in Sources */,
 				D68E98802982B75300F55CD6 /* Common.swift in Sources */,
 				D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.m in Sources */,
 				D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */,
-				D68E98822982B82E00F55CD6 /* SuperviseImpl.swift in Sources */,
 				D6CBCA0F2970410700BB1BB5 /* MandelaApp.swift in Sources */,
 				D65EFB99297AC95A00ED6E5A /* AirPowerView.swift in Sources */,
 				D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */,
-				D68E98862982B99200F55CD6 /* MuteImpl.swift in Sources */,
-				D6CBCA4C29704F8F00BB1BB5 /* DOOMImpl.swift in Sources */,
-				D6D63AE2297AF08E003D10AD /* CarrierChangerImpl.swift in Sources */,
 				D68E98842982B97800F55CD6 /* MuteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

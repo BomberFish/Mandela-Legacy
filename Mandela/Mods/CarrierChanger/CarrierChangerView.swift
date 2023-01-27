@@ -39,6 +39,20 @@ struct CarrierChangerView: View {
     }
 }
 
+// MARK: - Prompt user for Name
+    
+func NamePrompt() {
+    let alert = UIAlertController(title: "Custom carrier", message: "Enter what to use as the carrier.", preferredStyle: .alert)
+    alert.addTextField(configurationHandler: { textField in
+        // Narcissism 101
+        textField.placeholder = "BomberFish Industries"
+    })
+    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+        let text = alert.textFields![0].text!
+        SetName(newName: text)
+    }))
+}
+
 struct CarrierChangerView_Previews: PreviewProvider {
     static var previews: some View {
         CarrierChangerView()

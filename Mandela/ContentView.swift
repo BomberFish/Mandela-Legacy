@@ -104,7 +104,7 @@ struct ContentView: View {
                     .padding()
                     .foregroundColor(Color(UIColor.systemGray))
             }
-            Text("Mandela " + appVersion + ", iOS" + systemVersion)
+            Text("Mandela " + appVersion + ", iOS " + systemVersion)
         }
         .toolbar {
             // Respring button
