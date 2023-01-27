@@ -88,27 +88,30 @@ struct ContentView: View {
     @Binding var triggerRespring: Bool
     @State private var showInfo = false;
     @State private var updatedMessage = message
+    var systemVersion = UIDevice.current.systemVersion
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     var body: some View {
-        NavigationView {
-            ListView()
-                // MARK: - Top bar
-                .toolbar {
-                    // Respring button
-                    Button(action: {respring()}){
-                        Image(systemName: "arrow.counterclockwise.circle")
-                        Text("Respring")
-                    }
-                }
+        VStack {
+            NavigationView {
+                ListView()
+            }
+            HStack {
+                Image(systemName: currentSymbol)
+                    .tint(Color(UIColor.systemGray))
+                Text(message)
+                    .font(.system(size: 14))
+                    .frame (maxWidth: .infinity, alignment: .center)
+                    .padding()
+                    .foregroundColor(Color(UIColor.systemGray))
+            }
+            Text("Mandela " + appVersion + ", iOS" + systemVersion)
         }
-        HStack {
-            Image(systemName: currentSymbol)
-                .tint(Color(UIColor.systemGray))
-            Text(message)
-                .font(.system(size: 14))
-                .frame (maxWidth: .infinity, alignment: .center)
-                .padding()
-                .foregroundColor(Color(UIColor.systemGray))
+        .toolbar {
+            // Respring button
+            Button(action: {respring()}){
+                Image(systemName: "arrow.counterclockwise.circle")
+                Text("Respring")
+            }
         }
     }
     

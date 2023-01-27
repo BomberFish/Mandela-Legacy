@@ -12,6 +12,7 @@ struct SuperviseView: View {
     var body: some View {
         VStack {
             Button{
+                impactVibrate()
                 Supervise()
             }
             label: {
@@ -25,6 +26,7 @@ struct SuperviseView: View {
             .buttonStyle(.bordered)
             
             Button{
+                impactVibrate()
                 Unsupervise()
             }
             label: {

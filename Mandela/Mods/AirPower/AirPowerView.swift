@@ -11,10 +11,16 @@ struct AirPowerView: View {
     @State private var updatedMessage = message
     var body: some View {
         VStack {
-            Button("Replace the Charging Sound!", action: OverwriteCharger)
-                .controlSize(.large)
-                .tint(.accentColor)
-                .buttonStyle(.bordered)
+            Button{
+                impactVibrate()
+                OverwriteCharger()
+            }
+            label: {
+                Image(systemName: "antenna.radiowaves.left.and.right")
+                    .tint(.accentColor)
+                    .foregroundColor(.accentColor)
+                Text("Enable")
+            }
             Text(message)
                 .font(.system(size: 14))
                 .frame (maxWidth: .infinity, alignment: .center)

@@ -80,3 +80,9 @@ func iconMap(code: Int) {
             currentSymbol = "gearshape.2.fill"
     }
 }
+
+// MARK: - Vibrate
+func impactVibrate() {
+    let impact = UIImpactFeedbackGenerator(style: .medium)
+    impact.impactOccurred()
+}

@@ -11,10 +11,16 @@ struct CarrierChangerView: View {
     @State private var updatedMessage = message
     var body: some View {
         VStack {
-            Button("Change the Carrier Name!", action: NamePrompt)
-                .controlSize(.large)
-                .tint(.accentColor)
-                .buttonStyle(.bordered)
+            Button{
+                impactVibrate()
+                NamePrompt()
+            }
+            label: {
+                Image(systemName: "antenna.radiowaves.left.and.right")
+                    .tint(.accentColor)
+                    .foregroundColor(.accentColor)
+                Text("Enable")
+            }
             Text("WARNING: Whether this tweak works is currently UNKNOWN. Here be dragons.")
                 .font(.system(size: 16))
                 .frame (maxWidth: .infinity, alignment: .center)

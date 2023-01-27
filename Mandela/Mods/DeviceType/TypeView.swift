@@ -13,6 +13,7 @@ struct TypeView: View {
     var body: some View {
         if #available(iOS 16, *) {
             Button{
+                impactVibrate()
                 plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
             }
         label: {
@@ -27,6 +28,7 @@ struct TypeView: View {
         .buttonStyle(.bordered)
             
             Button{
+                impactVibrate()
                 plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2796)
             }
         label: {
@@ -41,6 +43,7 @@ struct TypeView: View {
         .buttonStyle(.bordered)
         }
         Button{
+            impactVibrate()
             plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2532)
         }
         label: {
@@ -55,6 +58,7 @@ struct TypeView: View {
         .buttonStyle(.bordered)
             
             Button{
+                impactVibrate()
                 plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 1792)
             }
         label: {
@@ -69,6 +73,7 @@ struct TypeView: View {
         .buttonStyle(.bordered)
             
             Button{
+                impactVibrate()
                 plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 2436)
             }
         label: {
@@ -83,6 +88,7 @@ struct TypeView: View {
         .buttonStyle(.bordered)
             
             Button{
+                impactVibrate()
                 plistChangeInt(plistPath: mobilegestalt, key: "ArtworkDeviceSubType", value: 570)
             }
         label: {

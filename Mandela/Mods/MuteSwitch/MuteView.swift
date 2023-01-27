@@ -12,6 +12,7 @@ struct MuteView: View {
     var body: some View {
         VStack {
             Button{
+                impactVibrate()
                 EnableMute()
             }
             label: {
@@ -25,6 +26,7 @@ struct MuteView: View {
             .buttonStyle(.bordered)
             
             Button{
+                impactVibrate()
                 DisableMute()
             }
             label: {

@@ -12,6 +12,7 @@ struct DOOMView: View {
     var body: some View {
         VStack {
             Button{
+                impactVibrate()
                 OverwriteLicence()
             }
             label: {
