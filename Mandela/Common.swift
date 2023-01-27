@@ -63,6 +63,7 @@ overwriteFile(newData, plistPath)
 @_cdecl("setMessage")
 func setMessage(msg: String, ret: Int) {
         message = msg
+        iconMap(code: ret)
 }
 
 // MARK: - Map symbols to returned values
