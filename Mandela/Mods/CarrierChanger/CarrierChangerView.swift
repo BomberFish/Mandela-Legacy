@@ -13,7 +13,15 @@ struct CarrierChangerView: View {
         VStack {
             Button{
                 impactVibrate()
-                NamePrompt()
+                let alert = UIAlertController(title: "Custom carrier", message: "Enter what to use as the carrier.", preferredStyle: .alert)
+                alert.addTextField(configurationHandler: { textField in
+                    // Narcissism 101
+                    textField.placeholder = "BomberFish Industries"
+                })
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+                    let text = alert.textFields![0].text!
+                    SetName(newName: text)
+                }))
             }
             label: {
                 Image(systemName: "antenna.radiowaves.left.and.right")
@@ -40,20 +48,6 @@ struct CarrierChangerView: View {
         }
         .navigationTitle("Change Carrier Name")
     }
-}
-
-// MARK: - Prompt user for Name
-    
-func NamePrompt() {
-    let alert = UIAlertController(title: "Custom carrier", message: "Enter what to use as the carrier.", preferredStyle: .alert)
-    alert.addTextField(configurationHandler: { textField in
-        // Narcissism 101
-        textField.placeholder = "BomberFish Industries"
-    })
-    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
-        let text = alert.textFields![0].text!
-        SetName(newName: text)
-    }))
 }
 
 struct CarrierChangerView_Previews: PreviewProvider {

@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// TODO: Find that funny sandbox escape and implement it
+
 // MARK: - plist editing function (string)
 func plistChangeStr(plistPath: String, key: String, value: String) {
     let stringsData = try! Data(contentsOf: URL(fileURLWithPath: plistPath))
@@ -86,6 +88,7 @@ func impactVibrate() {
 }
 
 // MARK: - Set Carrier Name
+// FIXME: Needs unsandboxing
 func SetName(newName: String) {
     // TODO: Test if this works
     for url in try! FileManager.default.contentsOfDirectory(at: URL(fileURLWithPath: "/var/mobile/Library/Carrier Bundles/Overlay/"), includingPropertiesForKeys: nil) {
@@ -131,6 +134,7 @@ func Unsupervise() {
 }
 
 // MARK: - Muting Functions
+// FIXME: Needs unsandboxing
 
 // MARK: Enable CC tile
 func EnableMute() {

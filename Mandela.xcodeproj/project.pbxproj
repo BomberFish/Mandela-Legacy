@@ -23,6 +23,7 @@
 		D6CBCA4B29704F8F00BB1BB5 /* DOOMLicence.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CBCA4729704F8F00BB1BB5 /* DOOMLicence.xcassets */; };
 		D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */; };
 		D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */; };
+		D6FF339A29842AE100013438 /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FF339929842AE100013438 /* VersionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		D6DFDA5529705BEA002E2748 /* Mandela-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mandela-Bridging-Header.h"; sourceTree = "<group>"; };
 		D6DFDA5629705D20002E2748 /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
 		D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vm_unaligned_copy_switch_race.m; sourceTree = "<group>"; };
+		D6FF339929842AE100013438 /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				D6CBCA3C297046CE00BB1BB5 /* Mods */,
 				D6CBCA0E2970410700BB1BB5 /* MandelaApp.swift */,
+				D6FF339829842AA900013438 /* SoftwareVersion */,
 				D6CBCA102970410700BB1BB5 /* ContentView.swift */,
 				D6DFDA5529705BEA002E2748 /* Mandela-Bridging-Header.h */,
 				D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */,
@@ -212,6 +215,14 @@
 				D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */,
 			);
 			path = DOOMLicence;
+			sourceTree = "<group>";
+		};
+		D6FF339829842AA900013438 /* SoftwareVersion */ = {
+			isa = PBXGroup;
+			children = (
+				D6FF339929842AE100013438 /* VersionView.swift */,
+			);
+			path = SoftwareVersion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +362,7 @@
 				D6CBCA112970410700BB1BB5 /* ContentView.swift in Sources */,
 				D68E98802982B75300F55CD6 /* Common.swift in Sources */,
 				D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.m in Sources */,
+				D6FF339A29842AE100013438 /* VersionView.swift in Sources */,
 				D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */,
 				D6CBCA0F2970410700BB1BB5 /* MandelaApp.swift in Sources */,
 				D65EFB99297AC95A00ED6E5A /* AirPowerView.swift in Sources */,
@@ -513,7 +525,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 69;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mandela/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -529,7 +541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.2;
+				MARKETING_VERSION = 0.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.Mandela;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -551,7 +563,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 69;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mandela/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -567,7 +579,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.2;
+				MARKETING_VERSION = 0.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.Mandela;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

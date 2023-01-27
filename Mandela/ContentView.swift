@@ -8,73 +8,86 @@
 import SwiftUI
 
 // MARK: - List
+// TODO:
 struct ListView: View {
     var body: some View {
         List {
-            NavigationLink(destination: Mandela.TypeView()) {
-                HStack {
-                    // iPhone 14 icon
-                    Image("iphone.gen3")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 12)
-                        .tint(.accentColor)
-                        .colorMultiply(.accentColor)
-                        .foregroundColor(.accentColor)
-                    Text("Device Type")
+            Section(header: Text("Utility")) {
+                NavigationLink(destination: Mandela.TypeView()) {
+                    HStack {
+                        // iPhone 14 icon
+                        Image("iphone.gen3")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 12)
+                            .tint(.accentColor)
+                            .colorMultiply(.accentColor)
+                            .foregroundColor(.accentColor)
+                        Text("Device Type")
+                    }
+                }
+                NavigationLink(destination: Mandela.CarrierChangerView()) {
+                    HStack {
+                        // Antenna Icon
+                        Image(systemName: "antenna.radiowaves.left.and.right")
+                            .tint(.accentColor)
+                            .foregroundColor(.accentColor)
+                        Text("Change Carrier Name")
+                    }
+                }
+                NavigationLink(destination: Mandela.SuperviseView()) {
+                    HStack {
+                        // Lock Icon
+                        Image(systemName: "lock.iphone")
+                            .tint(.accentColor)
+                            .foregroundColor(.accentColor)
+                        Text("Supervise")
+                    }
+                }
+                NavigationLink(destination: Mandela.MuteView()) {
+                    HStack {
+                        // Mute Icon
+                        Image(systemName: "bell.slash.fill")
+                            .tint(.accentColor)
+                            .foregroundColor(.accentColor)
+                        Text("Mute Switch in Control Center")
+                    }
                 }
             }
             
-            // Any OS
-            NavigationLink(destination: Mandela.DOOMView()) {
-                HStack {
-                    // Document Icon
-                    Image(systemName: "doc.append")
-                        .tint(.accentColor)
-                        .foregroundColor(.accentColor)
-                    Text("Replace Licence with DOOM")
-                }
-            }
             
-            NavigationLink(destination: Mandela.AirPowerView()) {
-                HStack {
-                    // Bolt Icon
-                    Image(systemName: "bolt.fill")
-                        .tint(.accentColor)
-                        .foregroundColor(.accentColor)
-                    Text("AirPower Charging Sound")
+            Section(header: Text("Fun")) {
+                NavigationLink(destination: Mandela.DOOMView()) {
+                    HStack {
+                        // Document Icon
+                        Image(systemName: "doc.append")
+                            .tint(.accentColor)
+                            .foregroundColor(.accentColor)
+                        Text("Replace Licence with DOOM")
+                    }
+                }
+                NavigationLink(destination: Mandela.AirPowerView()) {
+                    HStack {
+                        // Bolt Icon
+                        Image(systemName: "bolt.fill")
+                            .tint(.accentColor)
+                            .foregroundColor(.accentColor)
+                        Text("AirPower Charging Sound")
+                    }
                 }
             }
-            
-            NavigationLink(destination: Mandela.CarrierChangerView()) {
-                HStack {
-                    // Antenna Icon
-                    Image(systemName: "antenna.radiowaves.left.and.right")
-                        .tint(.accentColor)
-                        .foregroundColor(.accentColor)
-                    Text("Change Carrier Name")
-                }
-            }
-            
-            NavigationLink(destination: Mandela.SuperviseView()) {
-                HStack {
-                    // Lock Icon
-                    Image(systemName: "lock.iphone")
-                        .tint(.accentColor)
-                        .foregroundColor(.accentColor)
-                    Text("Supervise")
-                }
-            }
-            
-            NavigationLink(destination: Mandela.MuteView()) {
-                HStack {
-                    // Mute Icon
-                    Image(systemName: "bell.slash.fill")
-                        .tint(.accentColor)
-                        .foregroundColor(.accentColor)
-                    Text("Mute Switch in Control Center")
-                }
-            }
+//            Section(header: Text("Danger Zone")) {
+//
+//                NavigationLink(destination: Mandela.VersionView()) {
+//                    HStack {
+//                        // Mute Icon
+//                        Image(systemName: "gear.badge")
+//                            .tint(.accentColor)
+//                            .foregroundColor(.accentColor)
+//                        Text("Software Version")
+//                    }
+//                }
+//            }
         }
         // Sidebar
         .listStyle(SidebarListStyle())
@@ -94,24 +107,25 @@ struct ContentView: View {
         VStack {
             NavigationView {
                 ListView()
+                
+                VStack {
+                    Image(systemName: currentSymbol)
+                        .foregroundColor(Color(UIColor.systemGray))
+                    Text(message)
+                        .font(.system(size: 14))
+                        .frame (maxWidth: .infinity, alignment: .center)
+                        .padding()
+                        .foregroundColor(Color(UIColor.systemGray))
+                }
+                Text("Mandela " + appVersion + ", iOS " + systemVersion)
                     .toolbar {
                         // Respring button
                         Button(action: {respring()}){
                             Image(systemName: "arrow.counterclockwise.circle")
                             Text("Respring")
-                        }	
+                        }
+                    }
             }
-            VStack {
-                Image(systemName: currentSymbol)
-                    .foregroundColor(Color(UIColor.systemGray))
-                Text(message)
-                    .font(.system(size: 14))
-                    .frame (maxWidth: .infinity, alignment: .center)
-                    .padding()
-                    .foregroundColor(Color(UIColor.systemGray))
-            }
-            Text("Mandela " + appVersion + ", iOS " + systemVersion)
-        }
         }
     }
     
