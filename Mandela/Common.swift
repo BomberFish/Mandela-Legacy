@@ -58,14 +58,10 @@ let newData = try! PropertyListSerialization.data(fromPropertyList: newPlist, fo
 overwriteFile(newData, plistPath)
 }
 
-//func setMessage(value: String) {
-//    message = value
-//    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-//        message=""
-//    }
-//}
+// TODO: Use the following for status icons: figure.mind.and.body (Error, code 1), checkmark.circle.fill (Success, code 0), checkmark.circle.trianglebadge.exclamationmark (Success with warning, code 2), and gearshape.2.fill (In Progress, code 3)
 
 @_cdecl("setMessage")
-func setMessage(str: String) {
-        message = str    
+func setMessage(msg: String, ret: Int) {
+        message = msg
+        returned = ret
 }

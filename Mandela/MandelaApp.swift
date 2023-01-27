@@ -8,6 +8,7 @@
 import SwiftUI
 
 var message = ""
+var returned = 0
     
 @main
 struct MandelaApp: App {
