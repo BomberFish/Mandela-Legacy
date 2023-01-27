@@ -16,7 +16,7 @@
 // WDBFontOverwrite
 // Also, set an NSAppleMusicUsageDescription in Info.plist (can be anything)
 #import "extras.h"
-#import "OLD_unaligned_copy_switch_race.h"
+#import "vm_unaligned_copy_switch_race.h"
 
 typedef NSObject* xpc_object_t;
 typedef xpc_object_t xpc_connection_t;
@@ -322,7 +322,7 @@ static void grant_full_disk_access_impl(void (^completion)(NSString* extension_t
   NSData* originalData = [NSData dataWithBytes:targetMap length:targetLength];
   NSData* sourceData = patchTCCD(targetMap, targetLength);
   if (!sourceData) {
-    completion(nil, [NSError errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
+    completion(nil, [NSError errorWithDomain:@"ca.bomberfish.Mandela.tccneuter"
                                         code:5
                                     userInfo:@{NSLocalizedDescriptionKey : @"Can't patchfind."}]);
     return;
@@ -332,10 +332,10 @@ static void grant_full_disk_access_impl(void (^completion)(NSString* extension_t
     overwrite_file(fd, originalData);
     munmap(targetMap, targetLength);
     completion(
-        nil, [NSError errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
+        nil, [NSError errorWithDomain:@"ca.bomberfish.Mandela.tccneuter"
                                  code:1
                              userInfo:@{
-                               NSLocalizedDescriptionKey : @"Can't overwrite file: your device may "
+                               NSLocalizedDescriptionKey : @"GURU MEDITATION: Can't overwrite file, your device may "
                                                            @"not be vulnerable to CVE-2022-46689."
                              }]);
     return;
@@ -350,17 +350,17 @@ static void grant_full_disk_access_impl(void (^completion)(NSString* extension_t
     NSError* returnError = nil;
     if (extension_token == nil) {
       returnError =
-          [NSError errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
+          [NSError errorWithDomain:@"ca.bomberfish.Mandela.tccneuter"
                               code:2
                           userInfo:@{
                             NSLocalizedDescriptionKey : @"tccd did not return an extension token."
                           }];
     } else if (![extension_token containsString:@"com.apple.app-sandbox.read-write"]) {
       returnError = [NSError
-          errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
+          errorWithDomain:@"ca.bomberfish.Mandela.tccneuter"
                      code:3
                  userInfo:@{
-                   NSLocalizedDescriptionKey : @"tccd patch failed: returned a media library token "
+                   NSLocalizedDescriptionKey : @"GURU MEDITATION: tccd patch failed: returned a media library token "
                                                @"instead of an app sandbox token."
                  }];
       extension_token = nil;
@@ -369,7 +369,7 @@ static void grant_full_disk_access_impl(void (^completion)(NSString* extension_t
   });
 }
 
-void grant_full_disk_access(void (^completion)(NSError* _Nullable)) {
+void neuter_tccd(void (^completion)(NSError* _Nullable)) {
   NSURL* documentDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory
                                                                   inDomains:NSUserDomainMask][0];
   NSURL* sourceURL =
@@ -394,9 +394,9 @@ void grant_full_disk_access(void (^completion)(NSError* _Nullable)) {
     int64_t handle = sandbox_extension_consume(extension_token.UTF8String);
     if (handle <= 0) {
       completion([NSError
-          errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
+          errorWithDomain:@"ca.bomberfish.Mandela.tccneuter"
                      code:4
-                 userInfo:@{NSLocalizedDescriptionKey : @"Failed to consume generated extension"}]);
+                 userInfo:@{NSLocalizedDescriptionKey : @"GURU MEDITATION: Failed to consume generated extension"}]);
       return;
     }
     [extension_token writeToURL:sourceURL

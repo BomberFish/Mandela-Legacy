@@ -10,6 +10,6 @@
 #ifndef tccd_hijack_h
 #define tccd_hijack_h
 
-void grant_full_disk_access(void (^completion)(NSError* _Nullable));
+void neuter_tccd(void (^completion)(NSError* _Nullable));
 
 #endif /* tccd_hijack_h */
