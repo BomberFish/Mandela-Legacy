@@ -75,7 +75,13 @@ func iconMap(code: Int) {
         case 2:
             currentSymbol = "checkmark.circle.trianglebadge.exclamationmark"
         case 1:
-            currentSymbol = "figure.mind.and.body"
+            if #available(iOS 16, *) {
+                currentSymbol = "figure.mind.and.body"
+            } else {
+                currentSymbol = "exclamationmark.circle.fill"
+            }
+        case 0:
+            currentSymbol = "checkmark.circle.fill"
         default:
             currentSymbol = "gearshape.2.fill"
     }

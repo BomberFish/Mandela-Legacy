@@ -40,7 +40,7 @@ struct MuteView: View {
             .buttonStyle(.bordered)
             HStack {
                 Image(systemName: currentSymbol)
-                    .tint(Color(UIColor.systemGray))
+                    .foregroundColor(Color(UIColor.systemGray))
                 Text(message)
                     .font(.system(size: 14))
                     .frame (maxWidth: .infinity, alignment: .center)

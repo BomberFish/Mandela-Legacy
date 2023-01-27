@@ -21,11 +21,15 @@ struct AirPowerView: View {
                     .foregroundColor(.accentColor)
                 Text("Enable")
             }
-            Text(message)
-                .font(.system(size: 14))
-                .frame (maxWidth: .infinity, alignment: .center)
-                .padding()
-                .foregroundColor(Color(UIColor.systemGray))
+            HStack {
+                Image(systemName: currentSymbol)
+                    .foregroundColor(Color(UIColor.systemGray))
+                Text(message)
+                    .font(.system(size: 14))
+                    .frame (maxWidth: .infinity, alignment: .center)
+                    .padding()
+                    .foregroundColor(Color(UIColor.systemGray))
+            }
         }
             .navigationTitle("AirPower Sound")
     }
