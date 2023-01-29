@@ -9,6 +9,7 @@ import SwiftUI
 
 var message = ""
 var currentSymbol = ""
+var unsandboxed = false
 
 @main
 struct MandelaApp: App {
@@ -18,6 +19,9 @@ struct MandelaApp: App {
         WindowGroup {
             // Pass triggerRespring to ContentView
             ContentView(triggerRespring: $triggerRespring)
+                .onAppear{
+                    unsandbox()
+                }
                 // Cool looking respring effect stolen from ballpa1n
                 .scaleEffect(triggerRespring ? 0.95 : 1)
                 .brightness(triggerRespring ? -1 : 0)
@@ -36,5 +40,20 @@ struct MandelaApp: App {
                     }
                 }
         }
+    }
+    func unsandbox() {
+        // thanks sourcelocation :trollface:
+                   do {
+                       // TrollStore method
+                       try FileManager.default.contentsOfDirectory(at: URL(fileURLWithPath: "/var/mobile"), includingPropertiesForKeys: nil)
+                   } catch {
+                       // MDC method
+                       grant_full_disk_access() { error in
+                           if (error != nil) {
+                               print("Unsandboxing failed.")
+                               unsandboxed = false
+                           }
+                       }
+            }
     }
 }

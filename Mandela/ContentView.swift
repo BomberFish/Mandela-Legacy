@@ -76,18 +76,27 @@ struct ListView: View {
                     }
                 }
             }
-//            Section(header: Text("Danger Zone")) {
-//
+            Section(header: Text("Danger Zone")) {
+
 //                NavigationLink(destination: Mandela.VersionView()) {
 //                    HStack {
-//                        // Mute Icon
+//                        // Gear Icon
 //                        Image(systemName: "gear.badge")
 //                            .tint(.accentColor)
 //                            .foregroundColor(.accentColor)
 //                        Text("Software Version")
 //                    }
 //                }
-//            }
+                NavigationLink(destination: Mandela.ResolutionView()) {
+                    HStack {
+                        // Ruler Icon
+                        Image(systemName: "ruler")
+                            .tint(.accentColor)
+                            .foregroundColor(.accentColor)
+                        Text("Change Resolution")
+                    }
+                }
+            }
         }
         // Sidebar
         .listStyle(SidebarListStyle())

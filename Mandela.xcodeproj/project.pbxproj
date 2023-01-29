@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */; };
 		D618A8C1298728520032111A /* Overwrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618A8C0298728520032111A /* Overwrite.swift */; };
+		D620973B29873C6200A2F996 /* ResolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620973A29873C6200A2F996 /* ResolutionView.swift */; };
 		D65EFB99297AC95A00ED6E5A /* AirPowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */; };
 		D65EFBA0297ACB6B00ED6E5A /* CarrierChangerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */; };
 		D68E987E2982B73E00F55CD6 /* SuperviseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E987D2982B73E00F55CD6 /* SuperviseView.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		D618A8C0298728520032111A /* Overwrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overwrite.swift; sourceTree = "<group>"; };
+		D620973A29873C6200A2F996 /* ResolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionView.swift; sourceTree = "<group>"; };
 		D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPowerView.swift; sourceTree = "<group>"; };
 		D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierChangerView.swift; sourceTree = "<group>"; };
 		D68E987D2982B73E00F55CD6 /* SuperviseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperviseView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 				D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */,
 			);
 			path = DeviceType;
+			sourceTree = "<group>";
+		};
+		D620973929873BF300A2F996 /* Resolution */ = {
+			isa = PBXGroup;
+			children = (
+				D620973A29873C6200A2F996 /* ResolutionView.swift */,
+			);
+			path = Resolution;
 			sourceTree = "<group>";
 		};
 		D65EFB97297AC93D00ED6E5A /* AirPower */ = {
@@ -209,6 +219,7 @@
 		D6CBCA3C297046CE00BB1BB5 /* Mods */ = {
 			isa = PBXGroup;
 			children = (
+				D620973929873BF300A2F996 /* Resolution */,
 				D68E987C2982271700F55CD6 /* MuteSwitch */,
 				D68E987B2982270400F55CD6 /* Supervise */,
 				D65EFB9E297ACB5700ED6E5A /* CarrierChanger */,
@@ -375,6 +386,7 @@
 				D6FF33B229845CF900013438 /* tccd-hijack.m in Sources */,
 				D6FF339A29842AE100013438 /* VersionView.swift in Sources */,
 				D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */,
+				D620973B29873C6200A2F996 /* ResolutionView.swift in Sources */,
 				D6CBCA0F2970410700BB1BB5 /* MandelaApp.swift in Sources */,
 				D65EFB99297AC95A00ED6E5A /* AirPowerView.swift in Sources */,
 				D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */,
