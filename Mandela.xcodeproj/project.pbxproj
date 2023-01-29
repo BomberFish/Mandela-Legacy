@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */; };
+		D618A8C1298728520032111A /* Overwrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618A8C0298728520032111A /* Overwrite.swift */; };
 		D65EFB99297AC95A00ED6E5A /* AirPowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */; };
 		D65EFBA0297ACB6B00ED6E5A /* CarrierChangerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */; };
 		D68E987E2982B73E00F55CD6 /* SuperviseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E987D2982B73E00F55CD6 /* SuperviseView.swift */; };
@@ -22,10 +23,10 @@
 		D6CBCA2C2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA2B2970412000BB1BB5 /* MandelaUITestsLaunchTests.swift */; };
 		D6CBCA4B29704F8F00BB1BB5 /* DOOMLicence.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6CBCA4729704F8F00BB1BB5 /* DOOMLicence.xcassets */; };
 		D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */; };
-		D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */; };
+		D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.c in Sources */ = {isa = PBXBuildFile; fileRef = D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.c */; };
 		D6FF339A29842AE100013438 /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FF339929842AE100013438 /* VersionView.swift */; };
 		D6FF33B229845CF900013438 /* tccd-hijack.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF33AF29845CF800013438 /* tccd-hijack.m */; };
-		D6FF33B329845CF900013438 /* extras.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF33B129845CF900013438 /* extras.m */; };
+		D6FF33B329845CF900013438 /* helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF33B129845CF900013438 /* helpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
+		D618A8C0298728520032111A /* Overwrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overwrite.swift; sourceTree = "<group>"; };
 		D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPowerView.swift; sourceTree = "<group>"; };
 		D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierChangerView.swift; sourceTree = "<group>"; };
 		D68E987D2982B73E00F55CD6 /* SuperviseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperviseView.swift; sourceTree = "<group>"; };
@@ -66,12 +68,12 @@
 		D6CBCA4929704F8F00BB1BB5 /* DOOMView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOOMView.swift; sourceTree = "<group>"; };
 		D6DFDA5529705BEA002E2748 /* Mandela-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mandela-Bridging-Header.h"; sourceTree = "<group>"; };
 		D6DFDA5629705D20002E2748 /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
-		D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vm_unaligned_copy_switch_race.m; sourceTree = "<group>"; };
+		D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vm_unaligned_copy_switch_race.c; sourceTree = "<group>"; };
 		D6FF339929842AE100013438 /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
 		D6FF33AE29845CF800013438 /* tccd-hijack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "tccd-hijack.h"; sourceTree = "<group>"; };
 		D6FF33AF29845CF800013438 /* tccd-hijack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "tccd-hijack.m"; sourceTree = "<group>"; };
-		D6FF33B029845CF800013438 /* extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extras.h; sourceTree = "<group>"; };
-		D6FF33B129845CF900013438 /* extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = extras.m; sourceTree = "<group>"; };
+		D6FF33B029845CF800013438 /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
+		D6FF33B129845CF900013438 /* helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,13 +169,14 @@
 				D6FF339829842AA900013438 /* SoftwareVersion */,
 				D6CBCA102970410700BB1BB5 /* ContentView.swift */,
 				D6DFDA5529705BEA002E2748 /* Mandela-Bridging-Header.h */,
-				D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.m */,
+				D6DFDA5729705D20002E2748 /* vm_unaligned_copy_switch_race.c */,
 				D68E987F2982B75300F55CD6 /* Common.swift */,
 				D6DFDA5629705D20002E2748 /* vm_unaligned_copy_switch_race.h */,
-				D6FF33B029845CF800013438 /* extras.h */,
-				D6FF33B129845CF900013438 /* extras.m */,
+				D6FF33B029845CF800013438 /* helpers.h */,
+				D6FF33B129845CF900013438 /* helpers.m */,
 				D6FF33AE29845CF800013438 /* tccd-hijack.h */,
 				D6FF33AF29845CF800013438 /* tccd-hijack.m */,
+				D618A8C0298728520032111A /* Overwrite.swift */,
 				D6CBCA122970412000BB1BB5 /* Assets.xcassets */,
 				D6CBCA142970412000BB1BB5 /* Preview Content */,
 			);
@@ -368,17 +371,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D68E987E2982B73E00F55CD6 /* SuperviseView.swift in Sources */,
+				D618A8C1298728520032111A /* Overwrite.swift in Sources */,
 				D65EFBA0297ACB6B00ED6E5A /* CarrierChangerView.swift in Sources */,
 				D6CBCA112970410700BB1BB5 /* ContentView.swift in Sources */,
 				D68E98802982B75300F55CD6 /* Common.swift in Sources */,
-				D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.m in Sources */,
+				D6DFDA5829705D20002E2748 /* vm_unaligned_copy_switch_race.c in Sources */,
 				D6FF33B229845CF900013438 /* tccd-hijack.m in Sources */,
 				D6FF339A29842AE100013438 /* VersionView.swift in Sources */,
 				D6CBCA4D29704F8F00BB1BB5 /* DOOMView.swift in Sources */,
 				D6CBCA0F2970410700BB1BB5 /* MandelaApp.swift in Sources */,
 				D65EFB99297AC95A00ED6E5A /* AirPowerView.swift in Sources */,
 				D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */,
-				D6FF33B329845CF900013438 /* extras.m in Sources */,
+				D6FF33B329845CF900013438 /* helpers.m in Sources */,
 				D68E98842982B97800F55CD6 /* MuteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

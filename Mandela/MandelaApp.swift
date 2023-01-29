@@ -9,7 +9,7 @@ import SwiftUI
 
 var message = ""
 var currentSymbol = ""
-    
+
 @main
 struct MandelaApp: App {
     // Trigger respring
