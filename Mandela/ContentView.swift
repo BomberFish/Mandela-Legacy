@@ -10,7 +10,6 @@ import SwiftUI
 // MARK: - List
 // TODO:
 struct ListView: View {
-    @Binding var triggerRespring: Bool
     let systemVersion = UIDevice.current.systemVersion
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
@@ -101,21 +100,13 @@ struct ListView: View {
                     }
                 }
             }
-            Section(header: Text("Mandela " + appVersion + " ç(" + appBuild +")" + ", iOS " + systemVersion)) {}
+            Section(header: Text("Mandela " + appVersion + " (" + appBuild +")" + ", iOS " + systemVersion)) {}
             
         }
         // Sidebar
         .listStyle(SidebarListStyle())
         // Mandela
         .navigationTitle("Mandela")
-        // Toolbar
-        .toolbar {
-            // Respring button
-            Button(action: {respring()}){
-                Image(systemName: "arrow.counterclockwise.circle")
-                Text("Respring")
-            }
-        }
     }
     // MARK: - Respring function (See MandelaApp.swift)
     func respring() {
@@ -134,6 +125,14 @@ struct ContentView: View {
         VStack {
             NavigationView {
                 ListView()
+                // Toolbar
+                .toolbar {
+                    // Respring button
+                    Button(action: {respring()}){
+                        Image(systemName: "arrow.counterclockwise.circle")
+                        Text("Respring")
+                    }
+                }
             }
         }
     }
