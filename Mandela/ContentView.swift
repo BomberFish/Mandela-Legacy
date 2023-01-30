@@ -108,12 +108,6 @@ struct ListView: View {
         // Mandela
         .navigationTitle("Mandela")
     }
-    // MARK: - Respring function (See MandelaApp.swift)
-    func respring() {
-        withAnimation(.easeInOut) {
-            triggerRespring = true
-        }
-    }
 }
 
 // MARK: - Main content view
@@ -134,6 +128,12 @@ struct ContentView: View {
                     }
                 }
             }
+        }
+    }
+    // MARK: - Respring function (See MandelaApp.swift)
+    func respring() {
+        withAnimation(.easeInOut) {
+            triggerRespring = true
         }
     }
 }
