@@ -12,6 +12,7 @@ import SwiftUI
 struct ListView: View {
     let systemVersion = UIDevice.current.systemVersion
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+    let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
     var body: some View {
         List {
             Section(header: Text("Utility")) {
@@ -99,13 +100,27 @@ struct ListView: View {
                     }
                 }
             }
-            Section(header: Text("Mandela " + appVersion + ", iOS " + systemVersion)) {}
+            Section(header: Text("Mandela " + appVersion + " ç(" + appBuild +")" + ", iOS " + systemVersion)) {}
             
         }
         // Sidebar
         .listStyle(SidebarListStyle())
         // Mandela
         .navigationTitle("Mandela")
+        // Toolbar
+        .toolbar {
+            // Respring button
+            Button(action: {respring()}){
+                Image(systemName: "arrow.counterclockwise.circle")
+                Text("Respring")
+            }
+        }
+    }
+    // MARK: - Respring function (See MandelaApp.swift)
+    func respring() {
+        withAnimation(.easeInOut) {
+            triggerRespring = true
+        }
     }
 }
 
@@ -118,21 +133,7 @@ struct ContentView: View {
         VStack {
             NavigationView {
                 ListView()
-                    .toolbar {
-                        // Respring button
-                        Button(action: {respring()}){
-                            Image(systemName: "arrow.counterclockwise.circle")
-                            Text("Respring")
-                        }
-                    }
             }
-        }
-    }
-    
-    // MARK: - Respring function (See MandelaApp.swift)
-    func respring() {
-        withAnimation(.easeInOut) {
-            triggerRespring = true
         }
     }
 }
