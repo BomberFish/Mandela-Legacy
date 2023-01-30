@@ -10,6 +10,7 @@
 		D60DB6DB29737AFF00B4FAC8 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */; };
 		D618A8C1298728520032111A /* Overwrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618A8C0298728520032111A /* Overwrite.swift */; };
 		D620973B29873C6200A2F996 /* ResolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D620973A29873C6200A2F996 /* ResolutionView.swift */; };
+		D620973D2987579400A2F996 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D620973C2987579300A2F996 /* Info.plist */; };
 		D65EFB99297AC95A00ED6E5A /* AirPowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */; };
 		D65EFBA0297ACB6B00ED6E5A /* CarrierChangerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */; };
 		D68E987E2982B73E00F55CD6 /* SuperviseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E987D2982B73E00F55CD6 /* SuperviseView.swift */; };
@@ -50,6 +51,7 @@
 		D60DB6DA29737AFF00B4FAC8 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		D618A8C0298728520032111A /* Overwrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overwrite.swift; sourceTree = "<group>"; };
 		D620973A29873C6200A2F996 /* ResolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionView.swift; sourceTree = "<group>"; };
+		D620973C2987579300A2F996 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D65EFB98297AC95A00ED6E5A /* AirPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPowerView.swift; sourceTree = "<group>"; };
 		D65EFB9F297ACB6B00ED6E5A /* CarrierChangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierChangerView.swift; sourceTree = "<group>"; };
 		D68E987D2982B73E00F55CD6 /* SuperviseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperviseView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				D6FF33B129845CF900013438 /* helpers.m */,
 				D6FF33AE29845CF800013438 /* tccd-hijack.h */,
 				D6FF33AF29845CF800013438 /* tccd-hijack.m */,
+				D620973C2987579300A2F996 /* Info.plist */,
 				D618A8C0298728520032111A /* Overwrite.swift */,
 				D6CBCA122970412000BB1BB5 /* Assets.xcassets */,
 				D6CBCA142970412000BB1BB5 /* Preview Content */,
@@ -353,6 +356,7 @@
 			files = (
 				D6CBCA162970412000BB1BB5 /* Preview Assets.xcassets in Resources */,
 				D6CBCA132970412000BB1BB5 /* Assets.xcassets in Resources */,
+				D620973D2987579400A2F996 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +559,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Mandela;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Grant permission to unsandbox – needed for some tweaks";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -565,7 +570,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.3;
+				MARKETING_VERSION = 0.4.99;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.Mandela;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -593,6 +598,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Mandela;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Grant permission to unsandbox – needed for some tweaks";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -603,7 +609,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.3;
+				MARKETING_VERSION = 0.4.99;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.Mandela;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

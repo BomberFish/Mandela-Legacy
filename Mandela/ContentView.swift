@@ -10,6 +10,8 @@ import SwiftUI
 // MARK: - List
 // TODO:
 struct ListView: View {
+    let systemVersion = UIDevice.current.systemVersion
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     var body: some View {
         List {
             Section(header: Text("Utility")) {
@@ -97,6 +99,8 @@ struct ListView: View {
                     }
                 }
             }
+            Section(header: Text("Mandela " + appVersion + ", iOS " + systemVersion)) {}
+            
         }
         // Sidebar
         .listStyle(SidebarListStyle())
@@ -110,23 +114,10 @@ struct ContentView: View {
     @Binding var triggerRespring: Bool
     @State private var showInfo = false;
     @State private var updatedMessage = message
-    var systemVersion = UIDevice.current.systemVersion
-    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     var body: some View {
         VStack {
             NavigationView {
                 ListView()
-                
-                VStack {
-                    Image(systemName: currentSymbol)
-                        .foregroundColor(Color(UIColor.systemGray))
-                    Text(message)
-                        .font(.system(size: 14))
-                        .frame (maxWidth: .infinity, alignment: .center)
-                        .padding()
-                        .foregroundColor(Color(UIColor.systemGray))
-                }
-                Text("Mandela " + appVersion + ", iOS " + systemVersion)
                     .toolbar {
                         // Respring button
                         Button(action: {respring()}){

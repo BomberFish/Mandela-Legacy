@@ -152,6 +152,13 @@ func DisableMute() {
     }
 }
 
+func xpc_crash(_ serviceName: String) {
+    let buffer = UnsafeMutablePointer<CChar>.allocate(capacity: serviceName.utf8.count)
+    defer { buffer.deallocate() }
+    strcpy(buffer, serviceName)
+    xpc_crasher(buffer)
+}
+
 // MARK: - Set Message function
 @_cdecl("setMessage")
 func setMessage(msg: String, ret: Int) {

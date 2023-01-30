@@ -14,13 +14,14 @@ struct ResolutionView: View {
         VStack {
             TextField("New height", value: $height, format: .number)
                                 .textFieldStyle(.roundedBorder)
+                                .keyboardType(.decimalPad)
             TextField("New width", value: $width, format: .number)
                                 .textFieldStyle(.roundedBorder)
+                                .keyboardType(.decimalPad)
             Button(action: {
                                 setResolution()
                             }) {
                                 Text("Set resolution")
-                                    .padding()
                             }
                             .controlSize(.large)
                             .tint(.accentColor)

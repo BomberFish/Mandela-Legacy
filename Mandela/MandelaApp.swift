@@ -30,13 +30,21 @@ struct MandelaApp: App {
                 // MARK: - Restarts springboard
                 .onChange(of: triggerRespring) { _ in
                     if triggerRespring == true {
-                        // MARK: - The main springboard bug
-                        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
-                            guard let window = UIApplication.shared.windows.first else { return }
-                            while true {
-                                window.snapshotView(afterScreenUpdates: false)
-                            }
-                        }
+                        // MARK: - Respring logic
+                        let processes = [
+                                    "com.apple.cfprefsd.daemon",
+                                    "com.apple.backboard.TouchDeliveryPolicyServer"
+                                ]
+                                for process in processes {
+                                    xpc_crash(process)
+                                }
+                        // old shit respring method
+//                        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
+//                            guard let window = UIApplication.shared.windows.first else { return }
+//                            while true {
+//                                window.snapshotView(afterScreenUpdates: false)
+//                            }
+//                        }
                     }
                 }
         }
