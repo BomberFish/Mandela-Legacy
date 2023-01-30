@@ -100,7 +100,7 @@ struct ListView: View {
                     }
                 }
             }
-            Section(header: Text("Mandela " + appVersion + " (" + appBuild +")" + ", iOS " + systemVersion)) {}
+            Section(header: Text("Mandela " + appVersion + " (" + appBuild + ")" + ", iOS " + systemVersion)) {}
             
         }
         // Sidebar
