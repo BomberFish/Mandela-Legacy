@@ -8,9 +8,7 @@
 import SwiftUI
 
 // MARK: - List
-// TODO:
 struct ListView: View {
-    let systemVersion = UIDevice.current.systemVersion
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
     var body: some View {
@@ -100,8 +98,7 @@ struct ListView: View {
                     }
                 }
             }
-            Section(header: Text("Mandela " + appVersion + " (" + appBuild + ")" + ", iOS " + systemVersion)) {}
-            
+            Section(header: Text("Mandela " + appVersion + " (" + appBuild + ")") {}
         }
         // Sidebar
         .listStyle(SidebarListStyle())
