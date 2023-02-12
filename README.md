@@ -1,3 +1,5 @@
+# Warning! This is being phased out in favour of [Mandela Rewritten](https://github.com/BomberFish/Mandela-Rewritten)! Please go there for future updates!
+
 # Mandela
 iOS customization app powered by CVE-2022-46689. No jailbreak required.
 
